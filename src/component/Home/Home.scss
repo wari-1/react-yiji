@@ -1,0 +1,83 @@
+.foot {
+  background-color: #000;
+  width: 100vw;
+  height: 13%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+    li {
+      width: 25%;
+      height: 100%;
+      a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-size: 100% 100%;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+      }
+    }
+    li:nth-child(1) {
+      a {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__zhan__2_u140.png");
+      }
+      a.active {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__zhan_u138.png");
+        background-size: 106% 100%;
+      }
+    }
+    li:nth-child(2) {
+      a {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__tui_u132.png");
+      }
+      a.active {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__tui_2_u142.png");
+        background-size: 106% 100%;
+      }
+    }
+    li:nth-child(3) {
+      a {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__fa_u134.png");
+      }
+      a.active {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__fa__2_u145.png");
+        background-size: 106% 100%;
+      }
+    }
+    li:nth-child(4) {
+      a {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__ge_u136.png");
+      }
+      a.active {
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/icon__ge__2_u148.png");
+        background-size: 106% 100%;
+      }
+    }
+  }
+}
+.zhanxun {
+  .swiper-container {
+    width: 100%;
+    height: 200px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-pagination.swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: red;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.swiper-slide.five {
+  background-image: url("https://raw.githubusercontent.com/liu-sir666/1903/master/yij_images/u10.jpg");
+  background-size: 100vw 100vh;
+  background-position: center;
+  text-align: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  p {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #6c5c5c;
+  }
+  a {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    font-size: 16px;
+    color: #6c5c5c;
+    transform: translateX(-50%);
+  }
+}
+.swiper-slide {
+}
