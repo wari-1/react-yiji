@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Swiper from "swiper/dist/js/swiper.js";
 import "swiper/dist/css/swiper.min.css";
+document.documentElement.style.fontSize =
+  document.documentElement.clientWidth / 10.8 + "px";
 class Zhanxun extends Component {
   componentDidMount() {
-    new Swiper(".swiper-container", {
+    new Swiper(".swiper-container1", {
       direction: "horizontal", // 水平切换选项
       slidesPerView: 1,
       loop: true,
@@ -13,11 +15,16 @@ class Zhanxun extends Component {
       },
       autoplay: true
     });
+    new Swiper(".swiper-container2", {
+      direction: "horizontal", // 水平切换选项
+      slidesPerView: 2.5,
+      spaceBetween: 8
+    });
   }
   render() {
     return (
       <div className="zhanxun">
-        <div className="swiper-container">
+        <div className="swiper-container1">
           <div className="swiper-wrapper">
             <div className="swiper-slide one">
               <img
@@ -41,11 +48,48 @@ class Zhanxun extends Component {
           </div>
         </div>
         <div className="banner2">
-          <div className="container">
-            <div className="box" />
-            <img src="" alt="" />
+          <div className="swiper-container2">
+            <div className="swiper-wrapper">
+              <div className="swiper-slide one">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_01.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="swiper-slide two">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_03.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="swiper-slide three">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_05.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="swiper-slide four">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_07.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="swiper-slide four">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_09.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="swiper-slide six">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_11.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
+        <div className="main" />
       </div>
     );
   }
