@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { logger } from "redux-logger";
-import Home from "./reducers/Home";
+import zhanxun from "./reducers/zhanxun";
 const rootReduces = combineReducers({
-  Home
+  zhanxun
 });
 export default createStore(rootReduces, applyMiddleware(logger));

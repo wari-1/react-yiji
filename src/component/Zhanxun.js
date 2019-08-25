@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Swiper from "swiper/dist/js/swiper.js";
 import "swiper/dist/css/swiper.min.css";
+import { connect} from "react-redux";
+import { NavLink ,Route} from 'react-router-dom'
+import IsDisplaying from "./IsDisplaying";
+import ToDisplay from "./ToDisplay";
 document.documentElement.style.fontSize =
   document.documentElement.clientWidth / 10.8 + "px";
 class Zhanxun extends Component {
@@ -89,10 +93,31 @@ class Zhanxun extends Component {
             </div>
           </div>
         </div>
-        <div className="main" />
+        <div className="main" >
+          <div className="title">
+            <div className="nav">
+              <ul>
+                <li className={}>
+                  <NavLink to='/zhanxun/isdisplaying'></NavLink>
+                </li>
+                <li>
+                <NavLink to='/zhanxun/todisplay'></NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="content">
+            <Route path='/zhanxun/isdisplaying' component={IsDisplaying}></Route>
+            <Route path='/zhanxun/todisplay' component={ToDisplay}></Route>
+          </div>
+        </div>
       </div>
     );
   }
 }
-
-export default Zhanxun;
+const mapStateToProps = state => {
+  return {
+    z_articles: state.zhanxun
+  };
+};
+export default connect(mapStateToProps)(Zhanxun);
