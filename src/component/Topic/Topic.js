@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Topic.scss";
+const history = require("history").createHashHistory;
+
 class Topic extends Component {
   render() {
     const { id } = this.props.match.params;
@@ -15,10 +17,13 @@ class Topic extends Component {
       <div>
         <div className="main1">
           <img src={topic.src} alt="" />
-          <span></span>
+          <span onClick={() => window.history.go(-1)}></span>
         </div>
         <div className="main2">
-          <img src="" alt="" />
+          <img
+            src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u224_02.jpg"
+            alt=""
+          />
           <p>{topic.desc}</p>
         </div>
         <div className="main3">
