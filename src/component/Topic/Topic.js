@@ -16,10 +16,6 @@ class Topic extends Component {
         <div className="main1">
           <img src={topic.src} alt="" />
           <span></span>
-          <div className="left">
-            <span>展览时间：{item.during}</span>
-            <span>展览地点：{item.address}</span>
-          </div>
         </div>
         <div className="main2">
           <img src="" alt="" />
