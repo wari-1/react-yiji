@@ -95,6 +95,7 @@
     }
   }
 }
+
 .keywords {
   width: 100%;
   height: 40px;
@@ -118,11 +119,66 @@
     background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u127.jpg");
   }
 }
+.tuijian .keywords {
+  ul {
+    background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/u300.jpg");
+  }
+  ul.current {
+    background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/u302.jpg");
+  }
+}
+
 .zhanxun .main {
   .pro-showcase {
     display: none;
   }
   .pro-showcase.show {
     display: block;
+  }
+}
+img {
+  display: block;
+}
+.fabu {
+  .inner {
+    width: 96%;
+    margin: 0 auto;
+    .top {
+      padding: 18px 0;
+      position: relative;
+      border-bottom: 1px solid #000;
+      span,
+      i {
+        color: #d20003;
+        display: block;
+        font-size: 16px;
+        position: absolute;
+        top: 8px;
+      }
+      span {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      i {
+        right: 0;
+      }
+    }
+    .content {
+      textarea {
+        width: 100%;
+        height: 55%;
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/publish_03.png");
+        background-size: 100% 105%;
+        background-position: center;
+        border: none;
+        color: #545451;
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 5px 0;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
   }
 }

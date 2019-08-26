@@ -1,15 +1,28 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import List from "./List/List";
 class Tuijian extends Component {
-  state = {};
+  state = {
+    current: 0
+  };
+  onMouseEnter(index) {
+    this.setState({
+      current: index
+    });
+  }
   render() {
+    const { tuijian } = this.props;
+    const zhan = tuijian.filter(item => !item.wen);
+    const wen = tuijian.filter(item => item.wen);
+    console.log(zhan);
+    console.log(wen);
     return (
-      <div>
+      <div className="tuijian">
         <div className="main">
           <div className="title">
             <div className="keywords">
               <ul className={this.state.current === 0 ? "" : "current"}>
-                {zhanxun.map((list, index) => {
+                {tuijian.map((list, index) => {
                   return (
                     <li key={list.id}>
                       <a
@@ -24,7 +37,7 @@ class Tuijian extends Component {
             </div>
           </div>
           <div className="content">
-            {zhanxun.map((list, index) => {
+            {tuijian.map((list, index) => {
               return (
                 <div
                   className={
@@ -33,7 +46,7 @@ class Tuijian extends Component {
                   }
                   key={list.id}
                 >
-                  <List topics={index === 0 ? isDisplaying : toDisplay} />
+                  <List topics={this.state.current === 0 ? zhan : wen} />
                 </div>
               );
             })}

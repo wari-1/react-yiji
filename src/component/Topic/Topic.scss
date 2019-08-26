@@ -7,11 +7,20 @@ p {
   line-height: 1.4;
   display: block;
 }
+.box {
+  > span {
+    display: none;
+  }
+}
 .main1 {
   position: relative;
   width: 100%;
-  height: 200px;
+  // height: 200px;
+  img {
+    width: 100%;
+  }
   > span {
+    display: block;
     position: absolute;
     top: 15px;
     left: 15px;
@@ -22,6 +31,7 @@ p {
     background-position: center;
   }
 }
+
 .left {
   position: absolute;
   left: 5%;

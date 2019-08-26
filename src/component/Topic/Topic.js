@@ -10,10 +10,27 @@ class Topic extends Component {
     console.log(this.props);
     const path = this.props.match.path.replace("/topic/:id", "");
     const list = path === "/zhanxun" ? zhanxun : tuijian;
+
     const topic = list
       .find(item => item.content.find(ele => ele.id === id))
       .content.find(Element => Element.id === id);
-    return (
+    return topic.wen ? (
+      <div>
+        {topic.neirong.map((item, index) => (
+          <div key={item.id}>
+            <div className={index === 0 ? "main1 box" : "box"}>
+              <img src={item.src} alt="" />
+              <span
+                onClick={() => window.history.go(-1)}
+                className={index === 0 ? "show" : ""}
+              ></span>
+            </div>
+
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
       <div>
         <div className="main1">
           <img src={topic.src} alt="" />
@@ -46,8 +63,8 @@ class Topic extends Component {
 }
 const mapStateToProps = state => {
   return {
-    zhanxun: state.zhanxun
-    // tuijian: state.tuijian
+    zhanxun: state.zhanxun,
+    tuijian: state.tuijian
   };
 };
 
