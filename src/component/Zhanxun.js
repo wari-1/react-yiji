@@ -1,13 +1,24 @@
 import React, { Component } from "react";
 import Swiper from "swiper/dist/js/swiper.js";
 import "swiper/dist/css/swiper.min.css";
-import { connect} from "react-redux";
-import { NavLink ,Route} from 'react-router-dom'
-import IsDisplaying from "./IsDisplaying";
-import ToDisplay from "./ToDisplay";
+import { connect } from "react-redux";
+// import { NavLink, Route } from "react-router-dom";
+// import IsDisplaying from "./IsDisplaying";
+import List from "./List/List";
+// import ToDisplay from "./ToDisplay";
 document.documentElement.style.fontSize =
   document.documentElement.clientWidth / 10.8 + "px";
 class Zhanxun extends Component {
+  state = {
+    floor: [],
+    current: 0,
+    number: 0
+  };
+  onMouseEnter(index) {
+    this.setState({
+      current: index
+    });
+  }
   componentDidMount() {
     new Swiper(".swiper-container1", {
       direction: "horizontal", // 水平切换选项
@@ -26,6 +37,9 @@ class Zhanxun extends Component {
     });
   }
   render() {
+    const { zhanxun } = this.props;
+    const isDisplaying = zhanxun.filter(item => item.isDisplaying);
+    const toDisplay = zhanxun.filter(item => !item.isDisplaying);
     return (
       <div className="zhanxun">
         <div className="swiper-container1">
@@ -93,22 +107,38 @@ class Zhanxun extends Component {
             </div>
           </div>
         </div>
-        <div className="main" >
+        <div className="main">
           <div className="title">
-            <div className="nav">
-              <ul>
-                <li className={}>
-                  <NavLink to='/zhanxun/isdisplaying'></NavLink>
-                </li>
-                <li>
-                <NavLink to='/zhanxun/todisplay'></NavLink>
-                </li>
+            <div className="keywords">
+              <ul className={this.state.current === 0 ? "" : "current"}>
+                {zhanxun.map((list, index) => {
+                  return (
+                    <li key={list.id}>
+                      <a
+                        data-index={index}
+                        onClick={() => this.onMouseEnter(index)}
+                        href="#"
+                      ></a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
           <div className="content">
-            <Route path='/zhanxun/isdisplaying' component={IsDisplaying}></Route>
-            <Route path='/zhanxun/todisplay' component={ToDisplay}></Route>
+            {zhanxun.map((list, index) => {
+              return (
+                <div
+                  className={
+                    "pro-showcase" +
+                    (this.state.current == index ? " show" : "")
+                  }
+                  key={list.id}
+                >
+                  <List topics={index === 0 ? isDisplaying : toDisplay} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -117,7 +147,8 @@ class Zhanxun extends Component {
 }
 const mapStateToProps = state => {
   return {
-    z_articles: state.zhanxun
+    zhanxun: state.zhanxun
   };
 };
+
 export default connect(mapStateToProps)(Zhanxun);

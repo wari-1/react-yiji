@@ -1,10 +1,11 @@
 .foot {
   background-color: #000;
   width: 100vw;
-  height: 13%;
+  height: 100px;
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 10;
   ul {
     display: flex;
     align-items: center;
@@ -92,5 +93,36 @@
       width: 100%;
       height: 100%;
     }
+  }
+}
+.keywords {
+  width: 100%;
+  height: 40px;
+  ul {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u124.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    display: flex;
+    li {
+      width: 50%;
+      a {
+        width: 100%;
+        display: block;
+        height: 100%;
+      }
+    }
+  }
+  ul.current {
+    background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u127.jpg");
+  }
+}
+.zhanxun .main {
+  .pro-showcase {
+    display: none;
+  }
+  .pro-showcase.show {
+    display: block;
   }
 }

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import List from "./List/List";
-class IsDisplaying extends Component {
-  state = {};
-  render() {
-    return <div>
-      <List/>
-    </div>;
-  }
-}
+// import React, { Component } from "react";
+// import List from "./List/List";
 
-export default IsDisplaying;
+// class IsDisplaying extends Component {
+//   state = {};
+//   render() {
+//     const topics = this.props.z_articles.filter(item => item.isDisplaying);
+//     return <div></div>;
+//   }
+// }
+
+// export default connect(mapStateToProps)(IsDisplaying);

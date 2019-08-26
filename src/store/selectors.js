@@ -10,4 +10,4 @@ const time = item => {
     return day;
   }
 };
-export default { time };
+export { time };
