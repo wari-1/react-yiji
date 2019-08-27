@@ -140,6 +140,9 @@ img {
   display: block;
 }
 .fabu {
+  i {
+    color: #d20003;
+  }
   .inner {
     width: 96%;
     margin: 0 auto;
@@ -180,5 +183,274 @@ img {
         }
       }
     }
+    .bottom {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid #000;
+      > span {
+        width: 50%;
+      }
+      span {
+        font-size: 14px;
+        color: #545451;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        i {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+.geren {
+  .swiper-slide.one {
+    width: 100vw;
+    height: 125vh;
+    position: relative;
+    .drawer {
+      position: absolute;
+      left: 100vw;
+      top: 0;
+      z-index: 10;
+      width: 100vw;
+      display: none;
+      .box {
+        > span {
+          span {
+            color: #dd4f43;
+          }
+        }
+      }
+    }
+    .drawer.open {
+      left: 0;
+      display: block;
+    }
+  }
+  .left {
+    position: static;
+    .top {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-bg_01.png");
+      background-size: 100% 100%;
+      background-position: center;
+      > img {
+        position: absolute;
+
+        top: 10%;
+        right: 8%;
+        width: 8%;
+      }
+      .tou {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: 25%;
+          margin: 0 auto;
+          display: inline;
+          margin-bottom: 15px;
+        }
+        span {
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+      .bottom {
+        position: absolute;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        left: 20%;
+        bottom: 15%;
+        span {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          color: #fff;
+          font-size: 13px;
+        }
+      }
+    }
+    .main1 {
+      position: relative;
+      .inner {
+        width: 96%;
+        margin: 0 auto;
+        .title {
+          padding: 7px 5px 0;
+          padding-bottom: 7px;
+          display: flex;
+
+          h2 {
+            font-size: 18px;
+            flex-grow: 1;
+            color: #545451;
+          }
+          span {
+            position: absolute;
+            top: 7px;
+            right: 0;
+            display: block;
+            padding: 5px 0;
+            color: #fff;
+            width: 23%;
+            font-size: 12px;
+            text-align: center;
+            background-color: #dd4f43;
+            border-top-left-radius: 30%;
+            border-bottom-left-radius: 30%;
+          }
+        }
+        .content {
+          display: flex;
+
+          .box {
+            width: 32%;
+
+            display: flex;
+            flex-direction: column;
+
+            margin-right: 2%;
+            img {
+              width: 100%;
+              height: 100px;
+            }
+            span {
+              margin-left: 20%;
+              font-size: 12px;
+              margin: 5px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .right {
+    background-color: #f0f0f2;
+    .top {
+      padding: 15px 5px;
+      position: relative;
+      button {
+        width: 4%;
+        height: 14px;
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/user-info-pre_03.png");
+        background-size: 100% 100%;
+        background-position: center;
+        flex-shrink: 0;
+        border: 0;
+      }
+      .logo {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .blank {
+      width: 100vw;
+      height: 10px;
+      background-color: #dfe8ed;
+    }
+    .box {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid #bcc0c3;
+      button {
+        width: 4%;
+        height: 14px;
+        background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/user-info-next_07.png");
+        background-size: 100% 100%;
+        background-position: center;
+        margin-right: 4%;
+        flex-shrink: 0;
+        border: 0;
+      }
+      span.leftt {
+        flex-grow: 1;
+        font-size: 15px;
+      }
+      span.right {
+        flex-shrink: 0;
+        font-size: 12px;
+        color: #969799;
+        margin-right: 4%;
+      }
+      img.red {
+        width: 5%;
+        margin-right: 4%;
+      }
+    }
+    .tou {
+      img {
+        margin-right: 4%;
+        width: 20%;
+      }
+    }
+    .main2 {
+      background-color: #bdc8ce;
+      padding: 4px 0;
+      p {
+        font-size: 10px;
+        color: #949fa5;
+      }
+    }
+  }
+}
+.inner {
+  width: 96%;
+  margin: 0 auto;
+}
+.geren {
+  .keywords ul {
+    background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/tabs-bg.png");
+    a {
+      font-size: 16px;
+      text-align: center;
+      line-height: 2.5;
+    }
+    a.current {
+      color: #fff;
+    }
+  }
+  .keywords ul.current {
+    background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/tabsbg.png");
+  }
+  .main3 {
+    .box {
+      display: flex;
+      img {
+        width: 49%;
+        margin-right: 2%;
+        margin-top: 10px;
+      }
+      img:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.geren .swiper-container {
+  .one,
+  .two {
+    width: 100vw;
   }
 }

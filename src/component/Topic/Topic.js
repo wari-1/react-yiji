@@ -17,7 +17,7 @@ class Topic extends Component {
     return topic.wen ? (
       <div>
         {topic.neirong.map((item, index) => (
-          <div key={item.id}>
+          <div key={item.id} className="topic">
             <div className={index === 0 ? "main1 box" : "box"}>
               <img src={item.src} alt="" />
               <span
@@ -31,7 +31,7 @@ class Topic extends Component {
         ))}
       </div>
     ) : (
-      <div>
+      <div className="topic">
         <div className="main1">
           <img src={topic.src} alt="" />
           <span onClick={() => window.history.go(-1)}></span>

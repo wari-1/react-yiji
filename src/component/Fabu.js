@@ -17,14 +17,19 @@ class Fabu extends Component {
               style={{ marginTop: -7 }}
             />
             <img
-              src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/publish-tupain_03.png"
+              src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u310_03.png"
               alt=""
               style={{ padding: "10px 0px", width: "10%" }}
             />
           </div>
           <div className="bottom">
-            <span>点击获取位置</span>
-            <span>添加标签</span>
+            <span>
+              <i className="fa fa-map-marker" aria-hidden="true"></i>
+              点击获取位置
+            </span>
+            <span>
+              <i className="fa fa-tag" aria-hidden="true"></i>添加标签
+            </span>
           </div>
         </div>
       </div>

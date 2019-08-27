@@ -7,11 +7,14 @@ p {
   line-height: 1.4;
   display: block;
 }
-.box {
-  > span {
-    display: none;
+.topic {
+  .box {
+    > span {
+      display: none;
+    }
   }
 }
+
 .main1 {
   position: relative;
   width: 100%;
