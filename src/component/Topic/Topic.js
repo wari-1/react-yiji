@@ -57,6 +57,14 @@ class Topic extends Component {
             ""
           )}
         </div>
+        {!topic.wen ? (
+          <div className="main4">
+            <img src="" alt="" />
+            <div className="comments"></div>
+          </div>
+        ) : (
+          <div />
+        )}
       </div>
     );
   }
