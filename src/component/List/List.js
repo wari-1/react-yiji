@@ -6,12 +6,12 @@ class List extends Component {
   render() {
     const { topics } = this.props;
     // console.log(this.props);
-    console.log(topics);
+
     const list = topics[0].content.map(item => (
       <li key={item.id}>
         <Link
           to={
-            topics.indexOf("isDisplaying") !== -1
+            topics[0].zhanxun
               ? `/zhanxun/topic/${item.id}`
               : `/tuijian/topic/${item.id}`
           }

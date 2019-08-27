@@ -13,6 +13,42 @@ p {
       display: none;
     }
   }
+  .comments {
+    li.block {
+      display: block;
+    }
+    li.none {
+      display: none;
+    }
+    .btn {
+      padding: 5px 2px;
+      background-color: #f0f0f0;
+    }
+  }
+  .bot {
+    width: 100vw;
+    height: 70px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    button {
+      background-color: #000;
+      border: none;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: #fff;
+      i {
+        color: #fff;
+        font-size: 16px;
+        margin-right: 5px;
+      }
+      i.focus {
+        color: #dd4f43;
+      }
+    }
+  }
 }
 
 .main1 {

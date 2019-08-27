@@ -2,6 +2,7 @@ const initialState =
   [
     {id:'yudqyguvwdsfv',
     isDisplaying:true,
+    zhanxun:true,
     content:
     [
   {
@@ -498,6 +499,7 @@ const initialState =
   {
     id:'65213789466',
     isDisplaying:false,
+    zhanxun:true,
     content:
 [
   {
@@ -522,7 +524,7 @@ const initialState =
         "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u246_04.jpg",
         "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u246_06.jpg",
         "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u246_08.jpg",
-        "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u246_10.jpg"
+        "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u246_10.png"
       ]
     },
     comments: [
