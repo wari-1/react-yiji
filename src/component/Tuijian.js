@@ -25,11 +25,7 @@ class Tuijian extends Component {
                 {tuijian.map((list, index) => {
                   return (
                     <li key={list.id}>
-                      <a
-                        data-index={index}
-                        onClick={() => this.onMouseEnter(index)}
-                        href="#"
-                      ></a>
+                      <span onClick={() => this.onMouseEnter(index)}></span>
                     </li>
                   );
                 })}
@@ -42,7 +38,7 @@ class Tuijian extends Component {
                 <div
                   className={
                     "pro-showcase" +
-                    (this.state.current == index ? " show" : "")
+                    (this.state.current === index ? " show" : "")
                   }
                   key={list.id}
                 >

@@ -315,11 +315,11 @@ class Zhanxun extends Component {
                   {zhanxun.map((list, index) => {
                     return (
                       <li key={list.id}>
-                        <a
-                          data-index={index}
+                        <span
+                          
                           onClick={() => this.onMouseEnter(index)}
-                          href="#"
-                        ></a>
+                          
+                        ></span>
                       </li>
                     );
                   })}
@@ -332,7 +332,7 @@ class Zhanxun extends Component {
                   <div
                     className={
                       "pro-showcase" +
-                      (this.state.current == index ? " show" : "")
+                      (this.state.current === index ? " show" : "")
                     }
                     key={list.id}
                   >
