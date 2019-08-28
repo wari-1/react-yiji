@@ -1,24 +1,16 @@
 import React, { Component } from "react";
-import { time } from "../../store/selectors";
 import "./List.scss";
 import store from "../../store";
 import { Link } from "react-router-dom";
-class List extends Component {
+class Listt extends Component {
+  state = {};
   render() {
     const { topics, geren } = this.props;
     // console.log(this.props);
-    console.log(geren);
-    const list = topics[0].content.map(item => (
+
+    const list = topics.map(item => (
       <li key={item.id}>
-        <Link
-          to={
-            topics[0].zhanxun
-              ? `/zhanxun/topic/${item.id}`
-              : `/tuijian/topic/${item.id}`
-          }
-        >
-          <img src={item.src} alt="" />
-        </Link>
+        <img src={item.src} alt="" />
         {topics[0].wen ? (
           <div />
         ) : (
@@ -28,31 +20,21 @@ class List extends Component {
           </div>
         )}
 
-        {!topics[0].wen ? (
-          <div className="right">
-            <span>剩余{time(item)}天</span>
-          </div>
-        ) : (
-          <div />
-        )}
         {topics[0].wen ? (
           <div />
         ) : (
           <div className="bottom">
             <i
-              className="fa fa-share-square-o"
+              className=" fa fa-share-square-o"
               aria-hidden="true"
               style={{ marginRight: "25%" }}
             />
             <span>
               <i
-                className={
-                  geren.like.find(ele => ele === item.id)
-                    ? "fa fa-heart"
-                    : "red fa fa-heart"
-                }
+                className="fa fa-heart"
                 aria-hidden="true"
                 style={{
+                  marginRight: "25%",
                   color: geren.like.find(ele => ele === item.id)
                     ? "red"
                     : "#fff"
@@ -86,4 +68,4 @@ class List extends Component {
   }
 }
 
-export default List;
+export default Listt;

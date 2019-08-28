@@ -1,14 +1,17 @@
 const initialState = {
   touxiang:
     "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_03.png",
-  name:'阴雨天',
+  name: "阴雨天",
   guanzhu: 11,
   fabu: 9,
+  like: [],
   fangke: 49,
-  dizhi:{
-    shi:'北京市',
-    qu:'海淀区'
+  dizhi: {
+    shi: "北京市",
+    qu: "海淀区"
   },
+  userId: "wtt",
+  comments: [],
   zhanxun: [
     {
       id: "geeh",
@@ -319,44 +322,66 @@ const initialState = {
       id: "uiqudh"
     }
   ],
-  works:[
+  works: [
     {
-     id:'qhwhqqw',
-    yuanchuang: [
-    {
-      id: "uydwhbfc",
-      src:
-        "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_07.png"
+      id: "qhwhqqw",
+      yuanchuang: [
+        {
+          id: "uydwhbfc",
+          src:
+            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_07.png"
+        },
+        {
+          id: "uydwhqqwbfc",
+          src:
+            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_09.png"
+        }
+      ]
     },
     {
-      id: "uydwhqqwbfc",
-      src:
-        "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_09.png"
-    }
-  ],
-  },
-  {
-    id:'qiuwy3dybhc',
-    huancun: [
-    {
-      id: "uydwhqqwbfc",
-      src:
-        "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_09.png"
-    },
-    {
-      id: "uydwhbfc",
-      src:
-        "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_07.png"
+      id: "qiuwy3dybhc",
+      huancun: [
+        {
+          id: "uydwhqqwbfc",
+          src:
+            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_09.png"
+        },
+        {
+          id: "uydwhbfc",
+          src:
+            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User_07.png"
+        }
+      ]
     }
   ]
-  }
-    
-  ]
-  
-  
 };
 export default (state = initialState, action) => {
   switch (action.type) {
+    case "CHANGELIKE":
+      if (state.like.indexOf(action.payload.id) === -1) {
+        return { ...state, like: [...state.like, action.payload.id] };
+      } else {
+        return {
+          ...state,
+          like: state.like.filter(ele => ele !== action.payload.id)
+        };
+      }
+    case "ADDCOMMENT":
+      return {
+        ...state,
+        comments: [
+          ...state.comments,
+          {
+            id: new Date().getTime(),
+            text: action.payload.text,
+            name: state.name,
+            userId: state.userId,
+            touxiang: state.touxiang,
+            postId: action.payload.postId
+          }
+        ]
+      };
+      action.payload.clear();
     default:
       return state;
   }

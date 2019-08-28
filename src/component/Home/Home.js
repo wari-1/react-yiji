@@ -7,13 +7,17 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="home">
+        <div className="home" style={{ paddingBottom: 70 }}>
           <Main1 />
         </div>
         <div className="foot">
           <ul>
             <li>
-              <NavLink to="/zhanxun" activeClassName="active" />
+              <NavLink
+                to="/zhanxun"
+                activeClassName="active"
+                className={this.props.match.path === "/home" ? "active" : ""}
+              />
             </li>
             <li>
               <NavLink to="/tuijian" activeClassName="active" />

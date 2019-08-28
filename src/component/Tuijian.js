@@ -11,7 +11,7 @@ class Tuijian extends Component {
     });
   }
   render() {
-    const { tuijian } = this.props;
+    const { tuijian, geren } = this.props;
     const zhan = tuijian.filter(item => !item.wen);
     const wen = tuijian.filter(item => item.wen);
     console.log(zhan);
@@ -46,7 +46,10 @@ class Tuijian extends Component {
                   }
                   key={list.id}
                 >
-                  <List topics={this.state.current === 0 ? zhan : wen} />
+                  <List
+                    topics={this.state.current === 0 ? zhan : wen}
+                    geren={geren}
+                  />
                 </div>
               );
             })}
@@ -58,7 +61,8 @@ class Tuijian extends Component {
 }
 const mapStateToProps = state => {
   return {
-    tuijian: state.tuijian
+    tuijian: state.tuijian,
+    geren: state.geren
   };
 };
 

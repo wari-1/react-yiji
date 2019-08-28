@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Topic.scss";
-const history = require("history").createHashHistory;
+import store from "../../store";
 
 class Topic extends Component {
   state = {
@@ -9,7 +9,35 @@ class Topic extends Component {
     focus: false,
     address: false,
     pinglun: false,
-    share: false
+    share: false,
+    text: ""
+  };
+  input = event => {
+    this.setState({
+      text: event.target.value
+    });
+    console.log(event.target.value);
+    console.log(this.state.text);
+  };
+  clear = () => {
+    this.setState({
+      text: ""
+    });
+  };
+  addComment = () => {
+    const { id } = this.props.match.params;
+    const { text, pinglun } = this.state;
+    const { geren } = this.props;
+    if (text.trim()) {
+      store.dispatch({
+        type: "ADDCOMMENT",
+        payload: { postId: id, clear: this.clear, text: text, geren: geren }
+      });
+      this.clear();
+      this.setState({
+        pinglun: !pinglun
+      });
+    }
   };
   changeZhankai = () => {
     const { zhankai } = this.state;
@@ -50,8 +78,8 @@ class Topic extends Component {
 
   render() {
     const { id } = this.props.match.params;
-    const { zhanxun, tuijian } = this.props;
-    const { zhankai, focus, address, pinglun, share } = this.state;
+    const { zhanxun, tuijian, geren } = this.props;
+    const { zhankai, focus, address, pinglun, share, text } = this.state;
     console.log(this.props);
     const path = this.props.match.path.replace("/topic/:id", "");
     const list = path === "/zhanxun" ? zhanxun : tuijian;
@@ -67,7 +95,7 @@ class Topic extends Component {
             <div className={index === 0 ? "main1 box" : "box"}>
               <img src={item.src} alt="" />
               <span
-                onClick={() => window.history.go(-1)}
+                onClick={() => this.props.history.go(-1)}
                 className={index === 0 ? "show" : ""}
               ></span>
             </div>
@@ -77,11 +105,11 @@ class Topic extends Component {
         ))}
       </div>
     ) : (
-      <div className="topic">
+      <div className="topic" style={{ paddingBottom: 80 }}>
         <div className={address || pinglun ? "none main" : "main"}>
           <div className="main1">
             <img src={topic.src} alt="" />
-            <span onClick={() => window.history.go(-1)}></span>
+            <span onClick={() => this.props.history.go(-1)}></span>
           </div>
           <div className="main2">
             <img
@@ -142,9 +170,23 @@ class Topic extends Component {
             <div className="bot">
               <button>
                 <i
-                  className={focus ? "focus fa fa-heart-o" : "fa fa-heart-o"}
+                  className={
+                    geren.like.find(ele => ele === topic.id)
+                      ? "fa fa-heart"
+                      : "red fa fa-heart"
+                  }
                   aria-hidden="true"
-                  onClick={this.changeFocus}
+                  onClick={() =>
+                    store.dispatch({
+                      type: "CHANGELIKE",
+                      payload: { id: topic.id, geren: geren }
+                    })
+                  }
+                  style={{
+                    color: geren.like.find(ele => ele === topic.id)
+                      ? "red"
+                      : "#fff"
+                  }}
                 ></i>
                 关注
               </button>
@@ -170,7 +212,7 @@ class Topic extends Component {
               alt=""
             />
             <span
-              onClick={() => window.history.go(-1)}
+              onClick={() => this.props.history.go(-1)}
               style={{ zIndex: 51 }}
             ></span>
           </div>
@@ -189,17 +231,25 @@ class Topic extends Component {
                 <i
                   className="fa fa-angle-left"
                   aria-hidden="true"
-                  onClick={() => history.goBack()}
+                  onClick={() => this.props.history.goBack(-1)}
                   style={{ left: 0, fontSize: 25, color: "#000" }}
                 ></i>
                 <span>评论</span>
-                <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
+                <i
+                  className="fa fa-paper-plane-o"
+                  aria-hidden="true"
+                  onClick={this.addComment}
+                ></i>
               </div>
               <div className="content">
                 <textarea
                   cols="30"
                   rows="10"
                   placeholder="说点什么..."
+                  onChange={event => {
+                    this.input(event);
+                  }}
+                  value={text}
                 ></textarea>
 
                 <img
@@ -230,7 +280,8 @@ class Topic extends Component {
 const mapStateToProps = state => {
   return {
     zhanxun: state.zhanxun,
-    tuijian: state.tuijian
+    tuijian: state.tuijian,
+    geren: state.geren
   };
 };
 

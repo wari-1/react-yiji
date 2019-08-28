@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 // import { NavLink, Route } from "react-router-dom";
 // import IsDisplaying from "./IsDisplaying";
 import List from "./List/List";
+import Listt from "./List/Listt";
 // import ToDisplay from "./ToDisplay";
 document.documentElement.style.fontSize =
   document.documentElement.clientWidth / 10.8 + "px";
@@ -86,7 +87,7 @@ class Zhanxun extends Component {
     });
   }
   render() {
-    const { zhanxun } = this.props;
+    const { zhanxun ,geren} = this.props;
     const isDisplaying = zhanxun.filter(item => item.isDisplaying);
     const {
       search,
@@ -98,6 +99,30 @@ class Zhanxun extends Component {
       zhuangzhi
     } = this.state;
     const toDisplay = zhanxun.filter(item => !item.isDisplaying);
+    const huihuac = [
+      ...zhanxun[0].content.filter(item => item.type === "huihua"),
+      ...zhanxun[1].content.filter(item => item.type === "huihua")
+    ];
+    const shejic = [
+      ...zhanxun[0].content.filter(item => item.type === "sheji"),
+      ...zhanxun[1].content.filter(item => item.type === "sheji")
+    ];
+    const sheyingc = [
+      ...zhanxun[0].content.filter(item => item.type === "sheying"),
+      ...zhanxun[1].content.filter(item => item.type === "sheying")
+    ];
+    const diaosuc = [
+      ...zhanxun[0].content.filter(item => item.type === "diaosu"),
+      ...zhanxun[1].content.filter(item => item.type === "diaosu")
+    ];
+    const zhuangzhic = [
+      ...zhanxun[0].content.filter(item => item.type === "zhuangzhi"),
+      ...zhanxun[1].content.filter(item => item.type === "zhuangzhi")
+    ];
+    const shuimoc = [
+      ...zhanxun[0].content.filter(item => item.type === "shuimo"),
+      ...zhanxun[1].content.filter(item => item.type === "shuimo")
+    ];
     return (
       <div className="zhanxun">
         <div className={huihua ? "huihua open" : "huihua"}>
@@ -108,7 +133,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <img src="" alt="" />
+            <Listt topics={huihuac} geren={geren}/>
           </div>
         </div>
         <div className={shuimo ? "shuimo open" : "shuimo"}>
@@ -119,7 +144,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <img src="" alt="" />
+            <Listt topics={shuimoc} geren={geren}/>
           </div>
         </div>
         <div className={sheji ? "sheji open" : "sheji"}>
@@ -130,7 +155,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <img src="" alt="" />
+            <Listt topics={shejic} geren={geren}/>
           </div>
         </div>
         <div className={sheying ? "sheying open" : "sheying"}>
@@ -141,7 +166,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <img src="" alt="" />
+            <Listt topics={sheyingc} geren={geren}/>
           </div>
         </div>
         <div className={diaosu ? "diaosu open" : "diaosu"}>
@@ -152,7 +177,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <img src="" alt="" />
+            <Listt topics={diaosuc} geren={geren}/>
           </div>
         </div>
         <div className={zhuangzhi ? "zhuangzhi open" : "zhuangzhi"}>
@@ -163,7 +188,11 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <img src="" alt="" />
+            {zhuangzhic.length ? (
+              <Listt topics={zhuangzhic} geren={geren}/>
+            ) : (
+              <img src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/zhuangzhi_02.png" />
+            )}
           </div>
         </div>
         <div className={search ? "search open" : "search "}>
@@ -180,7 +209,19 @@ class Zhanxun extends Component {
             />
           </div>
         </div>
-        <div className={!search ? "zhanxun-con" : "zhanxun-con none"}>
+        <div
+          className={
+            !search &&
+            !huihua &&
+            !zhuangzhi &&
+            !sheji &&
+            !sheying &&
+            !shuimo &&
+            !diaosu
+              ? "zhanxun-con"
+              : "zhanxun-con none"
+          }
+        >
           <div className="topp">
             <div className="inner">
               <div className="logo">
@@ -226,36 +267,42 @@ class Zhanxun extends Component {
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_01.jpg"
                     alt=""
+                    onClick={this.changeHuihua}
                   />
                 </div>
                 <div className="swiper-slide two">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_03.jpg"
                     alt=""
+                    onClick={this.changeShuimo}
                   />
                 </div>
                 <div className="swiper-slide three">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_05.jpg"
                     alt=""
+                    onClick={this.changeSheji}
                   />
                 </div>
                 <div className="swiper-slide four">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_07.jpg"
                     alt=""
+                    onClick={this.changeSheying}
                   />
                 </div>
                 <div className="swiper-slide four">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_09.jpg"
                     alt=""
+                    onClick={this.changeDiaosu}
                   />
                 </div>
                 <div className="swiper-slide six">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_11.jpg"
                     alt=""
+                    onClick={this.changeZhuangzhi}
                   />
                 </div>
               </div>
@@ -289,7 +336,7 @@ class Zhanxun extends Component {
                     }
                     key={list.id}
                   >
-                    <List topics={index === 0 ? isDisplaying : toDisplay} />
+                    <List topics={index === 0 ? isDisplaying : toDisplay} geren={geren}/>
                   </div>
                 );
               })}
@@ -302,7 +349,8 @@ class Zhanxun extends Component {
 }
 const mapStateToProps = state => {
   return {
-    zhanxun: state.zhanxun
+    zhanxun: state.zhanxun,
+    geren:state.geren
   };
 };
 
