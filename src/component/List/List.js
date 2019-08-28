@@ -60,7 +60,7 @@ class List extends Component {
       </li>
     ));
     return (
-      <div>
+      <div className="list">
         <ul className="content">{list}</ul>
       </div>
     );

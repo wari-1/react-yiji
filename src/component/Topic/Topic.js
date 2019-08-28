@@ -6,7 +6,10 @@ const history = require("history").createHashHistory;
 class Topic extends Component {
   state = {
     zhankai: false,
-    focus: false
+    focus: false,
+    address: false,
+    pinglun: false,
+    share: false
   };
   changeZhankai = () => {
     const { zhankai } = this.state;
@@ -20,10 +23,29 @@ class Topic extends Component {
       focus: !focus
     });
   };
+  changeAddress = () => {
+    const { address } = this.state;
+    this.setState({
+      address: !address
+    });
+  };
+  changePinglun = () => {
+    const { pinglun } = this.state;
+    this.setState({
+      pinglun: !pinglun
+    });
+  };
+  changeShare = () => {
+    const { share } = this.state;
+    this.setState({
+      share: !share
+    });
+  };
+
   render() {
     const { id } = this.props.match.params;
     const { zhanxun, tuijian } = this.props;
-    const { zhankai, focus } = this.state;
+    const { zhankai, focus, address, pinglun, share } = this.state;
     console.log(this.props);
     const path = this.props.match.path.replace("/topic/:id", "");
     const list = path === "/zhanxun" ? zhanxun : tuijian;
@@ -50,7 +72,7 @@ class Topic extends Component {
       </div>
     ) : (
       <div className="topic">
-        <div className="main">
+        <div className={address || pinglun ? "none main" : "main"}>
           <div className="main1">
             <img src={topic.src} alt="" />
             <span onClick={() => window.history.go(-1)}></span>
@@ -87,16 +109,9 @@ class Topic extends Component {
                   <li
                     key={item.id}
                     className={!zhankai && index > 1 ? "none" : "block"}
-                    style={{ margin: "1px 0", height: "100px" }}
                   >
-                    <img
-                      src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/geye_02.png"
-                      style={{
-                        width: "100vw",
-                        height: "100px",
-                        marginBottom: 1
-                      }}
-                    />
+                    <span>{item.name}</span>
+                    <p>{item.text}</p>
                   </li>
                 ))}
                 <div className="btn">
@@ -113,27 +128,85 @@ class Topic extends Component {
           ) : (
             <div />
           )}
-          <div className="bot">
-            <button>
-              <i
-                className={focus ? "focus fa fa-heart-o" : "fa fa-heart-o"}
-                aria-hidden="true"
-                onClick={this.changeFocus}
-              ></i>
-              关注
-            </button>
-            <button>
-              <i className="fa fa-location-arrow" aria-hidden="true"></i>到这
-            </button>
-            <button>
-              <i className="fa fa-share" aria-hidden="true"></i>分享
-            </button>
-            <button>
-              <i className="fa fa-commenting-o" aria-hidden="true"></i>评论
-            </button>
+          {!topic.wen ? (
+            <div className="bot">
+              <button>
+                <i
+                  className={focus ? "focus fa fa-heart-o" : "fa fa-heart-o"}
+                  aria-hidden="true"
+                  onClick={this.changeFocus}
+                ></i>
+                关注
+              </button>
+              <button onClick={this.changeAddress}>
+                <i className="fa fa-location-arrow" aria-hidden="true"></i>到这
+              </button>
+              <button onClick={this.changeShare}>
+                <i className="fa fa-share" aria-hidden="true"></i>
+                分享
+              </button>
+              <button onClick={this.changePinglun}>
+                <i className="fa fa-commenting-o" aria-hidden="true"></i>评论
+              </button>
+            </div>
+          ) : (
+            <div />
+          )}
+        </div>
+        <div className={address ? "address block" : "address none"}>
+          <div className="main1">
+            <img
+              src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/map_01.png"
+              alt=""
+            />
+            <span
+              onClick={() => window.history.go(-1)}
+              style={{ zIndex: 51 }}
+            ></span>
+          </div>
+          <div className="text">
+            <div className="inner">
+              <h4>{topic.address}</h4>
+              <span>开放时间：{topic.during}</span>
+              <p style={{ padding: 0 }}>地址：淮海路100号</p>
+            </div>
           </div>
         </div>
-        <div className="address"></div>
+        <div className={pinglun ? "pinglun block" : "pinglun none"}>
+          <div className="fabu">
+            <div className="inner">
+              <div className="top">
+                <i
+                  className="fa fa-angle-left"
+                  aria-hidden="true"
+                  onClick={() => history.goBack()}
+                  style={{ left: 0, fontSize: 25, color: "#000" }}
+                ></i>
+                <span>评论</span>
+                <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
+              </div>
+              <div className="content">
+                <textarea
+                  cols="30"
+                  rows="10"
+                  placeholder="说点什么..."
+                ></textarea>
+
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u310_03.png"
+                  alt=""
+                  style={{ padding: "10px 0px", width: "10%" }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="share" className={share ? "share block" : "share none"}>
+          <div className="modal-con">
+            <div className="modal"></div>
+            <div className="content"></div>
+          </div>
+        </div>
       </div>
     );
   }
