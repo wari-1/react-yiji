@@ -455,22 +455,7 @@ export default (state = initialState, action) => {
           postId: action.payload.postId
         });
       return [...state];
-    case "ADDCOMMENTT":
-      console.log(state);
-      state
-        .find(item =>
-          item.content.find(ele => ele.id === action.payload.postId)
-        )
-        .content.find(Element => Element.id === action.payload.postId)
-        .comments.push({
-          id: new Date().getTime(),
-          text: action.payload.text,
-          name: action.payload.geren.name,
-          userId: action.payload.geren.userId,
-          touxiang: action.payload.geren.touxiang,
-          postId: action.payload.postId
-        });
-      return [...state];
+    
 
     default:
       return state;
