@@ -12,13 +12,20 @@ class Zhanxun extends Component {
   state = {
     floor: [],
     current: 0,
-    number: 0
+    number: 0,
+    search: false
   };
   onMouseEnter(index) {
     this.setState({
       current: index
     });
   }
+  changeSearch = () => {
+    const { search } = this.state;
+    this.setState({
+      search: !search
+    });
+  };
   componentDidMount() {
     new Swiper(".swiper-container1", {
       direction: "horizontal", // 水平切换选项
@@ -39,106 +46,131 @@ class Zhanxun extends Component {
   render() {
     const { zhanxun } = this.props;
     const isDisplaying = zhanxun.filter(item => item.isDisplaying);
+    const { search } = this.state;
     const toDisplay = zhanxun.filter(item => !item.isDisplaying);
     return (
       <div className="zhanxun">
-        <div className="swiper-container1">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide one">
-              <img
-                src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u65.jpg"
-                alt=""
-              />
+        <div className={search ? "search open" : "search "}>
+          <div className="topp">
+            <div className="inner">
+              <i className="fa fa-search" aria-hidden="true"></i>
+              <button onClick={this.changeSearch}>x</button>
             </div>
-            <div className="swiper-slide two">
-              <img
-                src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u62.jpg"
-                alt=""
-              />
-            </div>
-            <div className="swiper-slide three">
-              <img
-                src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u68.jpg"
-                alt=""
-              />
-            </div>
-            <div className="swiper-pagination" style={{ zIndex: 50 }} />
+          </div>
+          <div className="content">
+            <img src="" alt="" />
           </div>
         </div>
-        <div className="banner2">
-          <div className="swiper-container2">
+        <div className="zhanxun-con">
+          <div className="topp">
+            <div className="inner">
+              <div className="logo">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/logo.png"
+                  alt=""
+                />
+              </div>
+              <i className="fa fa-search" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div className="swiper-container1">
             <div className="swiper-wrapper">
               <div className="swiper-slide one">
                 <img
-                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_01.jpg"
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u65.jpg"
                   alt=""
                 />
               </div>
               <div className="swiper-slide two">
                 <img
-                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_03.jpg"
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u62.jpg"
                   alt=""
                 />
               </div>
               <div className="swiper-slide three">
                 <img
-                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_05.jpg"
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u68.jpg"
                   alt=""
                 />
               </div>
-              <div className="swiper-slide four">
-                <img
-                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_07.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="swiper-slide four">
-                <img
-                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_09.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="swiper-slide six">
-                <img
-                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_11.jpg"
-                  alt=""
-                />
-              </div>
+              <div className="swiper-pagination" style={{ zIndex: 50 }} />
             </div>
           </div>
-        </div>
-        <div className="main">
-          <div className="title">
-            <div className="keywords">
-              <ul className={this.state.current === 0 ? "" : "current"}>
-                {zhanxun.map((list, index) => {
-                  return (
-                    <li key={list.id}>
-                      <a
-                        data-index={index}
-                        onClick={() => this.onMouseEnter(index)}
-                        href="#"
-                      ></a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-          <div className="content">
-            {zhanxun.map((list, index) => {
-              return (
-                <div
-                  className={
-                    "pro-showcase" +
-                    (this.state.current == index ? " show" : "")
-                  }
-                  key={list.id}
-                >
-                  <List topics={index === 0 ? isDisplaying : toDisplay} />
+          <div className="banner2">
+            <div className="swiper-container2">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide one">
+                  <img
+                    src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_01.jpg"
+                    alt=""
+                  />
                 </div>
-              );
-            })}
+                <div className="swiper-slide two">
+                  <img
+                    src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_03.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="swiper-slide three">
+                  <img
+                    src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_05.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="swiper-slide four">
+                  <img
+                    src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_07.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="swiper-slide four">
+                  <img
+                    src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_09.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="swiper-slide six">
+                  <img
+                    src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_11.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="main">
+            <div className="title">
+              <div className="keywords">
+                <ul className={this.state.current === 0 ? "" : "current"}>
+                  {zhanxun.map((list, index) => {
+                    return (
+                      <li key={list.id}>
+                        <a
+                          data-index={index}
+                          onClick={() => this.onMouseEnter(index)}
+                          href="#"
+                        ></a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+            <div className="content">
+              {zhanxun.map((list, index) => {
+                return (
+                  <div
+                    className={
+                      "pro-showcase" +
+                      (this.state.current == index ? " show" : "")
+                    }
+                    key={list.id}
+                  >
+                    <List topics={index === 0 ? isDisplaying : toDisplay} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -245,7 +245,7 @@ class Geren extends Component {
               <div className="modal" onClick={this.changeShare}></div>
               <div className="content">
                 <img
-                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/share_02.png"
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/img_02.png"
                   alt=""
                 />
                 <button onClick={this.changeShare}>取消</button>
