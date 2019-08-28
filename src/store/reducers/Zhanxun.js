@@ -14,6 +14,7 @@ const initialState = [
         endTime: "2019-08-31T15:05:42+08:00",
         during: "2019.07.15-08.31",
         isDisplaying: true,
+        zhanxun: true,
         desc:
           "本次展览将从人像摄影家肖全为杨丽萍拍摄的众多摄影中挑选出一组精品一个是舞之精灵,美的化身:一个被营为中国最好的人像摄影家。两人的心灵碰隆会擦出什么样的艺术火花?指影师镜头下直实的杨丽萍是什么样的?25日开始的“心动展,无疑极六地撩起了人们的好奇心",
         author: {
@@ -48,7 +49,7 @@ const initialState = [
         startTime: "2019-08-24T15:05:42+08:00",
         endTime: "2019-10-10T15:05:42+08:00",
         during: "2019.08.24-10.10",
-        isDisplaying: true,
+        isDisplaying: true,zhanxun: true,
         desc:
           "曾健勇出主于广东倉海一个笃信基督软的家庭，任今天这样一丁'解构'、'去历史化'、'反宏大叙事'莫各貝妙流行旳年代，他力图通过自己的思考、创作和展览，以'穴洪荒'、'启示录、'翼乐园'三藕视觉场景，重建一个关于人类和自我的'编迁史'。以时间为轴展幵的三幕，既充满了历史旳必然宿命，也展现了自身內部的复疾肺突-这是一个身处历史内部的当代艺术家力图对'历史'的理解和婁写。第一墓六洪荒大洪荒是历史的终结，也是历史旳幵端。上帝毁灭了旧人类，创造了新人类。义人诺亚在神的指引下，带领自己的家入和各种动物登上方舟，从而躲过灾雅。新人诺亚把一年方为12 丁月、宙丁冃30天，'编年史'由此开始。穴洪荒几乎在所有衰明的源头中削能找到，然而，它不仅是一个关于正义与邪恶、忠告与背弃、选择与放弃、毀夬与拯救的閒生故事，臾是人类方史中不断重现旳伦理'原型'。这里，它显现为一场旷日持久旳战争。",
         author: {
@@ -94,7 +95,7 @@ const initialState = [
         startTime: "2019-07-29T15:05:42+08:00",
         endTime: "2019-10-10T15:05:42+08:00",
         during: "2019.07.29-10.10",
-        isDisplaying: true,
+        isDisplaying: true,zhanxun: true,
         desc:
           "本次展览将从人像摄影家肖全为杨丽萍拍摄的众多摄影中挑选出一组精品一个是舞之精灵,美的化身:一个被营为中国最好的人像摄影家。两人的心灵碰隆会擦出什么样的艺术火花?指影师镜头下直实的杨丽萍是什么样的?25日开始的“心动展,无疑极六地撩起了人们的好奇心",
         author: {
@@ -144,7 +145,7 @@ const initialState = [
         startTime: "2019-07-29T15:05:42+08:00",
         endTime: "2019-10-08T15:05:42+08:00",
         during: "2019.07.29-10.8",
-        isDisplaying: true,
+        isDisplaying: true,zhanxun: true,
         desc:
           "曾健勇出主于广东倉海一个笃信基督软的家庭，任今天这样一丁'解构'、'去历史化'、'反宏大叙事'莫各貝妙流行旳年代，他力图通过自己的思考、创作和展览，以'穴洪荒'、'启示录、'翼乐园'三藕视觉场景，重建一个关于人类和自我的'编迁史'。以时间为轴展幵的三幕，既充满了历史旳必然宿命，也展现了自身內部的复疾肺突-这是一个身处历史内部的当代艺术家力图对'历史'的理解和婁写。第一墓六洪荒大洪荒是历史的终结，也是历史旳幵端。上帝毁灭了旧人类，创造了新人类。义人诺亚在神的指引下，带领自己的家入和各种动物登上方舟，从而躲过灾雅。新人诺亚把一年方为12 丁月、宙丁冃30天，'编年史'由此开始。穴洪荒几乎在所有衰明的源头中削能找到，然而，它不仅是一个关于正义与邪恶、忠告与背弃、选择与放弃、毀夬与拯救的閒生故事，臾是人类方史中不断重现旳伦理'原型'。这里，它显现为一场旷日持久旳战争。",
         author: {
@@ -200,7 +201,7 @@ const initialState = [
         startTime: "2019-07-15T:05:42+08:00",
         endTime: "2019-08-31T15:05:42+08:00",
         during: "2019.07.15-08.31",
-        isDisplaying: true,
+        isDisplaying: true,zhanxun: true,
         desc:
           "本次展览将从人像摄影家肖全为杨丽萍拍摄的众多摄影中挑选出一组精品一个是舞之精灵,美的化身:一个被营为中国最好的人像摄影家。两人的心灵碰隆会擦出什么样的艺术火花?指影师镜头下直实的杨丽萍是什么样的?25日开始的“心动展,无疑极六地撩起了人们的好奇心",
         author: {
@@ -230,7 +231,7 @@ const initialState = [
   },
   {
     id: "65213789466",
-    isDisplaying: false,
+    isDisplaying: false,zhanxun: true,
     zhanxun: true,
     content: [
       {
@@ -278,7 +279,7 @@ const initialState = [
         startTime: "2019-09-10T15:05:42+08:00",
         endTime: "2019-11-09T15:05:42+08:00",
         during: "2019.09.10-11.09",
-        isDisplaying: false,
+        isDisplaying: false,zhanxun: true,
         desc:
           "本次展览将从人像摄影家肖全为杨丽萍拍摄的众多摄影中挑选出一组精品一个是舞之精灵,美的化身:一个被营为中国最好的人像摄影家。两人的心灵碰隆会擦出什么样的艺术火花?指影师镜头下直实的杨丽萍是什么样的?25日开始的“心动展,无疑极六地撩起了人们的好奇心",
         author: {
@@ -313,7 +314,7 @@ const initialState = [
         startTime: "2019-09-19T15:05:42+08:00",
         endTime: "2019-11-19T15:05:42+08:00",
         during: "2019.09.19-11.19",
-        isDisplaying: false,
+        isDisplaying: false,zhanxun: true,
         desc:
           "本次展览将从人像摄影家肖全为杨丽萍拍摄的众多摄影中挑选出一组精品一个是舞之精灵,美的化身:一个被营为中国最好的人像摄影家。两人的心灵碰隆会擦出什么样的艺术火花?指影师镜头下直实的杨丽萍是什么样的?25日开始的“心动展,无疑极六地撩起了人们的好奇心",
         author: {
@@ -348,7 +349,7 @@ const initialState = [
         startTime: "2019-10-08T15:05:42+08:00",
         endTime: "2019-12-18T15:05:42+08:00",
         during: "2019.10.08-12.18",
-        isDisplaying: false,
+        isDisplaying: false,zhanxun: true,
         desc:
           "曾健勇出主于广东倉海一个笃信基督软的家庭，任今天这样一丁'解构'、'去历史化'、'反宏大叙事'莫各貝妙流行旳年代，他力图通过自己的思考、创作和展览，以'穴洪荒'、'启示录、'翼乐园'三藕视觉场景，重建一个关于人类和自我的'编迁史'。以时间为轴展幵的三幕，既充满了历史旳必然宿命，也展现了自身內部的复疾肺突-这是一个身处历史内部的当代艺术家力图对'历史'的理解和婁写。第一墓六洪荒大洪荒是历史的终结，也是历史旳幵端。上帝毁灭了旧人类，创造了新人类。义人诺亚在神的指引下，带领自己的家入和各种动物登上方舟，从而躲过灾雅。新人诺亚把一年方为12 丁月、宙丁冃30天，'编年史'由此开始。穴洪荒几乎在所有衰明的源头中削能找到，然而，它不仅是一个关于正义与邪恶、忠告与背弃、选择与放弃、毀夬与拯救的閒生故事，臾是人类方史中不断重现旳伦理'原型'。这里，它显现为一场旷日持久旳战争。",
         author: {
@@ -384,7 +385,7 @@ const initialState = [
         startTime: "2019-09-25T15:05:42+08:00",
         endTime: "2019-10-09T15:05:42+08:00",
         during: "2019.09.25-10.09",
-        isDisplaying: false,
+        isDisplaying: false,zhanxun: true,
         desc:
           "本次展览将从人像摄影家肖全为杨丽萍拍摄的众多摄影中挑选出一组精品一个是舞之精灵,美的化身:一个被营为中国最好的人像摄影家。两人的心灵碰隆会擦出什么样的艺术火花?指影师镜头下直实的杨丽萍是什么样的?25日开始的“心动展,无疑极六地撩起了人们的好奇心",
         author: {
@@ -429,6 +430,22 @@ export default (state = initialState, action) => {
         return [...state];
       }
     case "ADDCOMMENT":
+      console.log(state);
+      state
+        .find(item =>
+          item.content.find(ele => ele.id === action.payload.postId)
+        )
+        .content.find(Element => Element.id === action.payload.postId)
+        .comments.push({
+          id: new Date().getTime(),
+          text: action.payload.text,
+          name: action.payload.geren.name,
+          userId: action.payload.geren.userId,
+          touxiang: action.payload.geren.touxiang,
+          postId: action.payload.postId
+        });
+      return [...state];
+    case "ADDCOMMENTT":
       console.log(state);
       state
         .find(item =>

@@ -510,6 +510,18 @@ const initialState = [
 ];
 export default (state = initialState, action) => {
   switch (action.type) {
+    case "CHANGELIKET":
+      if (action.payload.geren.like.indexOf(action.payload.id) === -1) {
+        state
+          .find(item => item.content.find(ele => ele.id === action.payload.id))
+          .content.find(Element => Element.id === action.payload.id).zanNum++;
+        return [...state];
+      } else {
+        state
+          .find(item => item.content.find(ele => ele.id === action.payload.id))
+          .content.find(Element => Element.id === action.payload.id).zanNum--;
+        return [...state];
+      }
     default:
       return state;
   }

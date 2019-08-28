@@ -39,6 +39,21 @@ class Topic extends Component {
       });
     }
   };
+  addComment1 = () => {
+    const { id } = this.props.match.params;
+    const { text, pinglun } = this.state;
+    const { geren } = this.props;
+    if (text.trim()) {
+      store.dispatch({
+        type: "ADDCOMMENTT",
+        payload: { postId: id, clear: this.clear, text: text, geren: geren }
+      });
+      this.clear();
+      this.setState({
+        pinglun: !pinglun
+      });
+    }
+  };
   changeZhankai = () => {
     const { zhankai } = this.state;
     this.setState({
@@ -69,7 +84,6 @@ class Topic extends Component {
       share: !share
     });
   };
-  
 
   render() {
     const { id } = this.props.match.params;
@@ -164,25 +178,47 @@ class Topic extends Component {
           {!topic.wen ? (
             <div className="bot">
               <button>
-                <i
-                  className={
-                    geren.like.find(ele => ele === topic.id)
-                      ? "fa fa-heart"
-                      : "red fa fa-heart"
-                  }
-                  aria-hidden="true"
-                  onClick={() =>
-                    store.dispatch({
-                      type: "CHANGELIKE",
-                      payload: { id: topic.id, geren: geren }
-                    })
-                  }
-                  style={{
-                    color: geren.like.find(ele => ele === topic.id)
-                      ? "red"
-                      : "#fff"
-                  }}
-                ></i>
+                {topic.zhanxun ? (
+                  <i
+                    className={
+                      geren.like.find(ele => ele === topic.id)
+                        ? "fa fa-heart"
+                        : "red fa fa-heart"
+                    }
+                    aria-hidden="true"
+                    onClick={() =>
+                      store.dispatch({
+                        type: "CHANGELIKE",
+                        payload: { id: topic.id, geren: geren }
+                      })
+                    }
+                    style={{
+                      color: geren.like.find(ele => ele === topic.id)
+                        ? "red"
+                        : "#fff"
+                    }}
+                  ></i>
+                ) : (
+                  <i
+                    className={
+                      geren.like.find(ele => ele === topic.id)
+                        ? "fa fa-heart"
+                        : "red fa fa-heart"
+                    }
+                    aria-hidden="true"
+                    onClick={() =>
+                      store.dispatch({
+                        type: "CHANGELIKET",
+                        payload: { id: topic.id, geren: geren }
+                      })
+                    }
+                    style={{
+                      color: geren.like.find(ele => ele === topic.id)
+                        ? "red"
+                        : "#fff"
+                    }}
+                  ></i>
+                )}
                 关注
               </button>
               <button onClick={this.changeAddress}>
@@ -230,11 +266,19 @@ class Topic extends Component {
                   style={{ left: 0, fontSize: 25, color: "#000" }}
                 ></i>
                 <span>评论</span>
-                <i
-                  className="fa fa-paper-plane-o"
-                  aria-hidden="true"
-                  onClick={this.addComment}
-                ></i>
+                {topic.zhanxun ? (
+                  <i
+                    className="fa fa-paper-plane-o"
+                    aria-hidden="true"
+                    onClick={this.addComment}
+                  ></i>
+                ) : (
+                  <i
+                    className="fa fa-paper-plane-o"
+                    aria-hidden="true"
+                    onClick={this.addComment1}
+                  ></i>
+                )}
               </div>
               <div className="content">
                 <textarea

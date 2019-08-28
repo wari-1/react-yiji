@@ -366,6 +366,15 @@ export default (state = initialState, action) => {
           like: state.like.filter(ele => ele !== action.payload.id)
         };
       }
+    case "CHANGELIKET":
+      if (state.like.indexOf(action.payload.id) === -1) {
+        return { ...state, like: [...state.like, action.payload.id] };
+      } else {
+        return {
+          ...state,
+          like: state.like.filter(ele => ele !== action.payload.id)
+        };
+      }
     case "ADDCOMMENT":
       return {
         ...state,
@@ -381,7 +390,22 @@ export default (state = initialState, action) => {
           }
         ]
       };
-      action.payload.clear();
+    case "ADDCOMMENTT":
+      return {
+        ...state,
+        comments: [
+          ...state.comments,
+          {
+            id: new Date().getTime(),
+            text: action.payload.text,
+            name: state.name,
+            userId: state.userId,
+            touxiang: state.touxiang,
+            postId: action.payload.postId
+          }
+        ]
+      };
+      
     default:
       return state;
   }
