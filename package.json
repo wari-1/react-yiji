@@ -17,9 +17,9 @@
     "sass-loader": "^7.3.1",
     "swiper": "^4.5.0"
   },
-  "homepage": "https://sunny-zz.github.io/react-test",
+  "homepage": "https://wari-1.github.io/react-yiji",
   "scripts": {
-    "start": "set PORT=3005 &&react-scripts start",
+    "start": "set PORT=3005 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
