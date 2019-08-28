@@ -13,7 +13,13 @@ class Zhanxun extends Component {
     floor: [],
     current: 0,
     number: 0,
-    search: false
+    search: false,
+    huihua: false,
+    shuimo: false,
+    diaosu: false,
+    zhuangzhi: false,
+    sheying: false,
+    sheji: false
   };
   onMouseEnter(index) {
     this.setState({
@@ -24,6 +30,42 @@ class Zhanxun extends Component {
     const { search } = this.state;
     this.setState({
       search: !search
+    });
+  };
+  changeHuihua = () => {
+    const { huihua } = this.state;
+    this.setState({
+      huihua: !huihua
+    });
+  };
+  changeDiaosu = () => {
+    const { diaosu } = this.state;
+    this.setState({
+      diaosu: !diaosu
+    });
+  };
+  changeZhuangzhi = () => {
+    const { zhuangzhi } = this.state;
+    this.setState({
+      zhuangzhi: !zhuangzhi
+    });
+  };
+  changeShuimo = () => {
+    const { shuimo } = this.state;
+    this.setState({
+      shuimo: !shuimo
+    });
+  };
+  changeSheying = () => {
+    const { sheying } = this.state;
+    this.setState({
+      sheying: !sheying
+    });
+  };
+  changeSheji = () => {
+    const { sheji } = this.state;
+    this.setState({
+      sheji: !sheji
     });
   };
   componentDidMount() {
@@ -46,22 +88,99 @@ class Zhanxun extends Component {
   render() {
     const { zhanxun } = this.props;
     const isDisplaying = zhanxun.filter(item => item.isDisplaying);
-    const { search } = this.state;
+    const {
+      search,
+      huihua,
+      sheji,
+      sheying,
+      shuimo,
+      diaosu,
+      zhuangzhi
+    } = this.state;
     const toDisplay = zhanxun.filter(item => !item.isDisplaying);
     return (
       <div className="zhanxun">
-        <div className={search ? "search open" : "search "}>
+        <div className={huihua ? "huihua open" : "huihua"}>
           <div className="topp">
             <div className="inner">
-              <i className="fa fa-search" aria-hidden="true"></i>
-              <button onClick={this.changeSearch}>x</button>
+              <i className="fa fa-search"></i>
+              <i className="fa fa-times" onClick={this.changeHuihua}></i>
             </div>
           </div>
           <div className="content">
             <img src="" alt="" />
           </div>
         </div>
-        <div className="zhanxun-con">
+        <div className={shuimo ? "shuimo open" : "shuimo"}>
+          <div className="topp">
+            <div className="inner">
+              <i className="fa fa-search"></i>
+              <i className="fa fa-times" onClick={this.changeShuimo}></i>
+            </div>
+          </div>
+          <div className="content">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div className={sheji ? "sheji open" : "sheji"}>
+          <div className="topp">
+            <div className="inner">
+              <i className="fa fa-search"></i>
+              <i className="fa fa-times" onClick={this.changeSheji}></i>
+            </div>
+          </div>
+          <div className="content">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div className={sheying ? "sheying open" : "sheying"}>
+          <div className="topp">
+            <div className="inner">
+              <i className="fa fa-search"></i>
+              <i className="fa fa-times" onClick={this.changeSheying}></i>
+            </div>
+          </div>
+          <div className="content">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div className={diaosu ? "diaosu open" : "diaosu"}>
+          <div className="topp">
+            <div className="inner">
+              <i className="fa fa-search"></i>
+              <i className="fa fa-times" onClick={this.changeDiaosu}></i>
+            </div>
+          </div>
+          <div className="content">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div className={zhuangzhi ? "zhuangzhi open" : "zhuangzhi"}>
+          <div className="topp">
+            <div className="inner">
+              <i className="fa fa-search"></i>
+              <i className="fa fa-times" onClick={this.changeZhuangzhi}></i>
+            </div>
+          </div>
+          <div className="content">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div className={search ? "search open" : "search "}>
+          <div className="topp">
+            <div className="inner">
+              <i className="fa fa-search"></i>
+              <i className="fa fa-times" onClick={this.changeSearch}></i>
+            </div>
+          </div>
+          <div className="content">
+            <img
+              src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/sae_02.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className={!search ? "zhanxun-con" : "zhanxun-con none"}>
           <div className="topp">
             <div className="inner">
               <div className="logo">
@@ -70,7 +189,11 @@ class Zhanxun extends Component {
                   alt=""
                 />
               </div>
-              <i className="fa fa-search" aria-hidden="true"></i>
+              <i
+                className="fa fa-search"
+                aria-hidden="true"
+                onClick={this.changeSearch}
+              ></i>
             </div>
           </div>
           <div className="swiper-container1">

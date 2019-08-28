@@ -64,14 +64,104 @@
 .open {
   left: 0;
 }
-.zhanxun-con {
-  position: relative;
-  .search {
+.zhanxun {
+  .topp {
+    .inner {
+      .inner {
+        width: 94%;
+        padding: 10% 0 10% 0;
+        margin: 0 auto;
+
+        position: relative;
+        i.fa-search {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          font-size: 20px;
+        }
+        img {
+          position: absolute;
+          top: 50%;
+          width: 40%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .diaosu {
+    .topp {
+      background-image: url();
+    }
+  }
+  .search,
+  .diaosu,
+  .sheji,
+  .huihua,
+  .zhuangzhi,
+  .sheying,
+  .shuimo {
     position: absolute;
     left: 100vw;
     top: 0;
     width: 100vw;
     height: 100vh;
+    transition: all 1s;
+    .topp {
+      .inner {
+        width: 94%;
+        padding: 10% 0 5% 0;
+        margin: 0 auto;
+        border-bottom: 1px solid #000;
+        position: relative;
+        i.fa-search {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          font-size: 20px;
+        }
+        .fa-times {
+          position: absolute;
+          top: 50%;
+          font-size: 20px;
+          right: 0;
+        }
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .search.open {
+    left: 0;
+    z-index: 100;
+  }
+}
+.zhanxun-con {
+  position: relative;
+  transition: all 1s;
+  .topp {
+    background-color: #f0f0f2;
+    .inner {
+      width: 94%;
+      padding: 10% 0 10% 0;
+      margin: 0 auto;
+
+      position: relative;
+      i.fa-search {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-size: 20px;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
   .swiper-container1 {
     width: 100%;
