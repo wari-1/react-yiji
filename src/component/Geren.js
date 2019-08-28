@@ -56,7 +56,7 @@ class Geren extends Component {
 
   render() {
     const { geren } = this.props;
-    const {  share, drawer, touxiang } = this.state;
+    const { share, drawer, touxiang } = this.state;
 
     return (
       <div className="geren" style={{ position: "relative" }}>
@@ -128,16 +128,14 @@ class Geren extends Component {
                   {geren.works.map((list, index) => {
                     return (
                       <li key={list.id}>
-                        <a
-                          data-index={index}
+                        <span
                           onClick={() => this.onMouseEnter(index)}
-                          href="#"
                           className={
                             this.state.current === index ? "current" : ""
                           }
                         >
                           {index === 0 ? "原创" : "缓存"}
-                        </a>
+                        </span>
                       </li>
                     );
                   })}
