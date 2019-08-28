@@ -45,7 +45,7 @@ class List extends Component {
               style={{ marginRight: "25%" }}
             />
             <span>
-              <i
+              {topics[0].zhanxun?<i
                 className={
                   geren.like.find(ele => ele === item.id)
                     ? "fa fa-heart"
@@ -63,7 +63,26 @@ class List extends Component {
                     payload: { id: item.id, geren: geren }
                   })
                 }
-              />
+              />:<i
+              className={
+                geren.like.find(ele => ele === item.id)
+                  ? "fa fa-heart"
+                  : "red fa fa-heart"
+              }
+              aria-hidden="true"
+              style={{
+                color: geren.like.find(ele => ele === item.id)
+                  ? "red"
+                  : "#fff"
+              }}
+              onClick={() =>
+                store.dispatch({
+                  type: "CHANGELIKET",
+                  payload: { id: item.id, geren: geren }
+                })
+              }
+            />}
+              
               <span>{item.zanNum}</span>
             </span>
             <span>
