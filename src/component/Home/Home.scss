@@ -139,33 +139,9 @@
 img {
   display: block;
 }
-.modal {
-  width: 100vw;
-  height: 100vh;
-  background-color: #707477;
-  z-index: 30;
-  top: 0;
-  left: 0;
-  position: fixed;
-}
-.modal-content {
-  width: 100vw;
-  background-color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 35;
-}
-.modal-container {
+
+.none {
   display: none;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.modal-container.toast {
-  display: block;
 }
 .fabu {
   i {
@@ -242,28 +218,6 @@ img {
   .touxiang.open1 {
     left: 0;
   }
-  .modal-content {
-    .inner {
-      width: 90%;
-      margin: 0 auto;
-      button {
-        font-size: 12px;
-        border: none;
-        padding: 5px 0;
-        width: 100%;
-      }
-      .top {
-        text-align: center;
-        border-bottom: 1px solid #da2218;
-      }
-      .bottom {
-        text-align: center;
-        button {
-          padding: 8px 0;
-        }
-      }
-    }
-  }
 
   .drawer {
     position: absolute;
@@ -289,9 +243,6 @@ img {
     display: block;
   }
 
-  .left.open {
-    display: none;
-  }
   .left {
     position: static;
     .top {
@@ -540,5 +491,43 @@ img {
   .one,
   .two {
     width: 100vw;
+  }
+}
+.geren {
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(49, 47, 47, 0.753);
+  }
+  .modal-con {
+    .content {
+      width: 100vw;
+      height: 30%;
+      background-color: #e2e2e2;
+      text-align: center;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      transition: all 1s;
+      z-index: 101;
+      img {
+        width: 100%;
+      }
+      button {
+        width: 100%;
+        background-color: #e2e2e2;
+        border: none;
+        font-size: 20px;
+        line-height: 2;
+        padding: 10px 0;
+      }
+    }
+  }
+  .geren .modal {
+    opacity: 0.5;
   }
 }

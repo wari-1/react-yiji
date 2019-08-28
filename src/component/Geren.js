@@ -6,7 +6,10 @@ class Geren extends Component {
     current: 0,
     open: false,
     toast: false,
-    open1: false
+    open1: false,
+    share: false,
+    drawer: false,
+    touxiang: false
   };
   onMouseEnter(index) {
     this.setState({
@@ -20,35 +23,56 @@ class Geren extends Component {
     });
     console.log(toast);
   };
-
-  onDock = () => {
-    const { open } = this.state;
+  changeShare = () => {
+    const { share } = this.state;
     this.setState({
-      open: !open
+      share: !share
     });
   };
-  onDock1 = () => {
-    const { open1 } = this.state;
+  changeDrawer = () => {
+    const { drawer } = this.state;
     this.setState({
-      open1: !open1
+      drawer: !drawer
     });
   };
+  changeTouxiang = () => {
+    const { touxiang } = this.state;
+    this.setState({
+      touxiang: !touxiang
+    });
+  };
+  // onDock = () => {
+  //   const { open } = this.state;
+  //   this.setState({
+  //     open: !open
+  //   });
+  // };
+  // onDock1 = () => {
+  //   const { open1 } = this.state;
+  //   this.setState({
+  //     open1: !open1
+  //   });
+  // };
 
   render() {
     const { geren } = this.props;
-    const { open, toast, open1 } = this.state;
+    const { open, toast, open1, share, drawer, touxiang } = this.state;
 
     return (
       <div className="geren" style={{ position: "relative" }}>
-        <div className={open && open1 ? "open left " : "left "}>
+        <div className=" left ">
           <div className="top">
             <img
               src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-top_06.png"
               alt=""
-              onClick={() => this.onDock()}
+              onClick={this.changeDrawer}
             />
             <div className="tou">
-              <img src={geren.touxiang} alt="" onClick={() => this.onDock1()} />
+              <img
+                src={geren.touxiang}
+                alt=""
+                onClick={() => this.changeTouxiang()}
+              />
               <span>{geren.name}</span>
             </div>
             <div className="bottom">
@@ -147,11 +171,19 @@ class Geren extends Component {
             </div>
           </div>
         </div>
-        <div className={open ? "open drawer shezhi" : "drawer shezhi"}>
+        <div
+          className={
+            drawer
+              ? "drawer shezhi open"
+              : touxiang || share
+              ? " drawer shezhi none"
+              : "drawer shezhi"
+          }
+        >
           <div className="right " style={{ width: "100vw", height: "100vh" }}>
             <div className="top">
               <div className="inner">
-                <button onClick={this.onDock}></button>
+                <button onClick={this.changeDrawer}></button>
                 <div className="logo">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/logo.png"
@@ -207,25 +239,33 @@ class Geren extends Component {
           </div>
         </div>
 
-        <div className={open1 ? "open1 touxiang" : "touxiang"}>
-          <div className={toast ? "modal-container toast" : "modal-container"}>
-            <div className="modal"></div>
-            <div className="modal-content">
-              <div className="inner">
-                <div className="top">
-                  <button>进入相册选择</button>
-                  <button>拍一张</button>
-                </div>
-                <div className="bottom">
-                  <button>取消</button>
-                </div>
+        <div className={touxiang ? "open1 touxiang" : "touxiang"}>
+          <div className={share && touxiang ? "share " : "share none"}>
+            <div className="modal-con">
+              <div className="modal" onClick={this.changeShare}></div>
+              <div className="content">
+                <img
+                  src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/share_02.png"
+                  alt=""
+                />
+                <button onClick={this.changeShare}>取消</button>
               </div>
             </div>
           </div>
-          <div className="right" style={{ width: "100vw", height: "100vh" }}>
+
+          <div
+            className="right"
+            style={{
+              width: "100vw",
+              height: "100vh",
+              position: "absolute",
+              left: 0,
+              top: 0
+            }}
+          >
             <div className="top">
               <div className="inner">
-                <button onClick={this.onDock1}></button>
+                <button onClick={this.changeTouxiang}></button>
                 <div className="logo">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/logo.png"
@@ -237,7 +277,7 @@ class Geren extends Component {
             </div>
             <div className="main1">
               <div className="inner">
-                <div className="box tou" onClick={this.toast}>
+                <div className="box tou" onClick={this.changeShare}>
                   <span className="leftt">头像</span>
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-info_01%20(2).png"

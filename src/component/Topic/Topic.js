@@ -41,6 +41,12 @@ class Topic extends Component {
       share: !share
     });
   };
+  changeShare1 = () => {
+    const { share } = this.state;
+    this.setState({
+      share: false
+    });
+  };
 
   render() {
     const { id } = this.props.match.params;
@@ -114,15 +120,19 @@ class Topic extends Component {
                     <p>{item.text}</p>
                   </li>
                 ))}
-                <div className="btn">
-                  {topic.comments.length > 2 && !zhankai ? (
-                    <p onClick={this.changeZhankai}>
-                      展开剩余{topic.comments.length - 2}条评论
-                    </p>
-                  ) : (
-                    <p onClick={this.changeZhankai}>收回</p>
-                  )}
-                </div>
+                {topic.comments.length > 2 ? (
+                  <div className="btn">
+                    {!zhankai ? (
+                      <p onClick={this.changeZhankai}>
+                        展开剩余{topic.comments.length - 2}条评论
+                      </p>
+                    ) : (
+                      <p onClick={this.changeZhankai}>收回</p>
+                    )}
+                  </div>
+                ) : (
+                  <div />
+                )}
               </div>
             </div>
           ) : (
@@ -203,8 +213,14 @@ class Topic extends Component {
         </div>
         <div className="share" className={share ? "share block" : "share none"}>
           <div className="modal-con">
-            <div className="modal"></div>
-            <div className="content"></div>
+            <div className="modal" onClick={this.changeShare}></div>
+            <div className="content">
+              <img
+                src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/share_02.png"
+                alt=""
+              />
+              <button onClick={this.changeShare}>取消</button>
+            </div>
           </div>
         </div>
       </div>
