@@ -56,7 +56,7 @@ class Geren extends Component {
 
   render() {
     const { geren } = this.props;
-    const { open, toast, open1, share, drawer, touxiang } = this.state;
+    const {  share, drawer, touxiang } = this.state;
 
     return (
       <div className="geren" style={{ position: "relative" }}>

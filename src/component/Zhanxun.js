@@ -11,9 +11,9 @@ document.documentElement.style.fontSize =
   document.documentElement.clientWidth / 10.8 + "px";
 class Zhanxun extends Component {
   state = {
-    floor: [],
+    
     current: 0,
-    number: 0,
+    
     search: false,
     huihua: false,
     shuimo: false,

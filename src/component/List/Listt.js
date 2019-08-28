@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./List.scss";
 import store from "../../store";
-import { Link } from "react-router-dom";
 class Listt extends Component {
   state = {};
   render() {

@@ -69,17 +69,12 @@ class Topic extends Component {
       share: !share
     });
   };
-  changeShare1 = () => {
-    const { share } = this.state;
-    this.setState({
-      share: false
-    });
-  };
+  
 
   render() {
     const { id } = this.props.match.params;
     const { zhanxun, tuijian, geren } = this.props;
-    const { zhankai, focus, address, pinglun, share, text } = this.state;
+    const { zhankai, address, pinglun, share, text } = this.state;
     console.log(this.props);
     const path = this.props.match.path.replace("/topic/:id", "");
     const list = path === "/zhanxun" ? zhanxun : tuijian;
