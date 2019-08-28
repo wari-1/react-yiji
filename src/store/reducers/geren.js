@@ -390,7 +390,7 @@ export default (state = initialState, action) => {
           }
         ]
       };
-    case "ADDCOMMENTT":
+    case "ADD":
       return {
         ...state,
         comments: [

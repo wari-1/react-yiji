@@ -45,7 +45,7 @@ class Topic extends Component {
     const { geren } = this.props;
     if (text.trim()) {
       store.dispatch({
-        type: "ADDCOMMENTT",
+        type: "ADD",
         payload: { postId: id, clear: this.clear, text: text, geren: geren }
       });
       this.clear();

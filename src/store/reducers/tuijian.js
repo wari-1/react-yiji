@@ -522,7 +522,7 @@ export default (state = initialState, action) => {
           .content.find(Element => Element.id === action.payload.id).zanNum--;
         return [...state];
       }
-    case "ADDCOMMENTT":
+    case "ADD":
       console.log(state);
       state
         .find(item =>
