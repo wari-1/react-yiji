@@ -208,19 +208,7 @@ class Zhanxun extends Component {
             />
           </div>
         </div>
-        <div
-          className={
-            !search &&
-            !huihua &&
-            !zhuangzhi &&
-            !sheji &&
-            !sheying &&
-            !shuimo &&
-            !diaosu
-              ? "zhanxun-con"
-              : "zhanxun-con none"
-          }
-        >
+        <div className="zhanxun-con">
           <div className="topp">
             <div className="inner">
               <div className="logo">
