@@ -225,7 +225,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="swiper-container1">
-            <div className="swiper-wrapper">
+            <div className="swiper-wrapper" style={{ overflow: "hidden" }}>
               <div className="swiper-slide one">
                 <img
                   src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/u65.jpg"
@@ -249,7 +249,7 @@ class Zhanxun extends Component {
           </div>
           <div className="banner2">
             <div className="swiper-container2">
-              <div className="swiper-wrapper">
+              <div className="swiper-wrapper" style={{ overflow: "hidden" }}>
                 <div className="swiper-slide one">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/banner_01.jpg"
