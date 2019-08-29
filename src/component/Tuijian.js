@@ -44,7 +44,7 @@ class Tuijian extends Component {
               </ul>
             </div>
           </div>
-          <div className="content">
+          <div className="content" style={{ height: "78vh", overflow: "auto" }}>
             {tuijian.map((list, index) => {
               return (
                 <div

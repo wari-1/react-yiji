@@ -315,7 +315,10 @@ class Zhanxun extends Component {
                 </ul>
               </div>
             </div>
-            <div className="content">
+            <div
+              className="content"
+              style={{ height: "74vh", overflow: "auto" }}
+            >
               {zhanxun.map((list, index) => {
                 return (
                   <div
