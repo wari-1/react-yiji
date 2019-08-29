@@ -100,16 +100,18 @@ class Topic extends Component {
     return topic.wen ? (
       <div>
         {topic.neirong.map((item, index) => (
-          <div key={item.id} className="topic">
-            <div className={index === 0 ? "main1 box" : "box"}>
-              <img src={item.src} alt="" />
-              <span
-                onClick={() => this.props.history.go(-1)}
-                className={index === 0 ? "show" : ""}
-              ></span>
-            </div>
+          <div className="topic">
+            <div key={item.id} className="box">
+              <div className={index === 0 ? "main1 box" : "box"}>
+                <img src={item.src} alt="" />
+                <span
+                  onClick={() => this.props.history.go(-1)}
+                  className={index === 0 ? "show" : ""}
+                ></span>
+              </div>
 
-            <p>{item.desc}</p>
+              <p>{item.desc}</p>
+            </div>
           </div>
         ))}
       </div>

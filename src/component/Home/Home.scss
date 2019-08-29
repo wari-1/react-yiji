@@ -599,12 +599,12 @@ img {
 .geren {
   .keywords ul {
     background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/tabs-bg.png");
-    a {
+    span {
       font-size: 16px;
       text-align: center;
       line-height: 2.5;
     }
-    a.current {
+    span.current {
       color: #fff;
     }
   }
