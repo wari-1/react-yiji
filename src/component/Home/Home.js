@@ -6,8 +6,8 @@ class Home extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <div className="home" style={{ paddingBottom: 70 }}>
+      <div style={{ height: "100vh", overflow: "auto" }}>
+        <div className="home" style={{ paddingBottom: 60 }}>
           <Main1 />
         </div>
         <div className="foot">
