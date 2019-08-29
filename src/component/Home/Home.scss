@@ -56,31 +56,32 @@
 .open {
   left: 0;
 }
-.zhanxun {
-  .topp {
-    .inner {
-      .inner {
-        width: 94%;
-        padding: 10% 0 10% 0;
-        margin: 0 auto;
 
-        position: relative;
-        i.fa-search {
-          position: absolute;
-          top: 50%;
-          right: 0;
-          font-size: 20px;
-        }
-        img {
-          position: absolute;
-          top: 50%;
-          width: 40%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
+.topp {
+  .inner {
+    .inner {
+      width: 94%;
+      padding: 10% 0 10% 0;
+      margin: 0 auto;
+
+      position: relative;
+      i.fa-search {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-size: 20px;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
+}
+.zhanxun {
   .diaosu {
     .topp {
       background-image: url("https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u187_01.png");
@@ -166,32 +167,33 @@
     z-index: 100;
   }
 }
+.topp {
+  background-color: #f0f0f2;
+  .inner {
+    width: 94%;
+    padding: 10% 0 10% 0;
+    margin: 0 auto;
+
+    position: relative;
+    i.fa-search {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      font-size: 20px;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
 .zhanxun-con {
   position: relative;
   transition: all 1s;
-  .topp {
-    background-color: #f0f0f2;
-    .inner {
-      width: 94%;
-      padding: 10% 0 10% 0;
-      margin: 0 auto;
 
-      position: relative;
-      i.fa-search {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        font-size: 20px;
-      }
-      img {
-        position: absolute;
-        top: 50%;
-        width: 40%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-  }
   .swiper-container1 {
     width: 100%;
     height: 200px;

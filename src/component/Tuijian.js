@@ -19,6 +19,17 @@ class Tuijian extends Component {
     console.log(wen);
     return (
       <div className="tuijian">
+        <div className="topp">
+          <div className="inner">
+            <div className="logo">
+              <img
+                src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/logo.png"
+                alt=""
+              />
+            </div>
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </div>
+        </div>
         <div className="main">
           <div className="title">
             <div className="keywords">
