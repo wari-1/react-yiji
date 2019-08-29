@@ -59,7 +59,15 @@ class Geren extends Component {
     const { share, drawer, touxiang } = this.state;
 
     return (
-      <div className="geren" style={{ position: "relative" }}>
+      <div
+        className="geren"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          width: "100vw",
+          height: "100vh"
+        }}
+      >
         <div className=" left ">
           <div className="top">
             <img
