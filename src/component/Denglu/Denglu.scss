@@ -33,12 +33,13 @@
     a,
     span {
       color: #6c5c5c;
+      font-size: 20px;
     }
   }
   .agree {
     width: 60%;
     margin: 0 auto;
-    margin-top: 30%;
+    margin-top: 25%;
     display: flex;
     align-items: center;
     input[type="checkbox" i] {
@@ -69,7 +70,7 @@
       display: flex;
       justify-content: space-around;
       li {
-        border-right: 1px solid #fff;
+        text-align: center;
         a {
           display: flex;
           align-items: center;
