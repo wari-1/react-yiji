@@ -6,7 +6,7 @@ class Home extends Component {
   state = {};
   render() {
     return (
-      <div style={{ height: "100vh", overflow: "auto" }}>
+      <div style={{ height: "100vh", height: "100vw", overflow: "auto" }}>
         <div className="home" style={{ paddingBottom: 60 }}>
           <Main1 />
         </div>
