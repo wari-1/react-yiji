@@ -180,11 +180,7 @@ class Topic extends Component {
               <button>
                 {topic.zhanxun ? (
                   <i
-                    className={
-                      geren.like.find(ele => ele === topic.id)
-                        ? "fa fa-heart"
-                        : "red fa fa-heart"
-                    }
+                    className="fa fa-heart"
                     aria-hidden="true"
                     onClick={() =>
                       store.dispatch({
@@ -194,17 +190,13 @@ class Topic extends Component {
                     }
                     style={{
                       color: geren.like.find(ele => ele === topic.id)
-                        ? "red"
+                        ? "#c1372c"
                         : "#fff"
                     }}
                   ></i>
                 ) : (
                   <i
-                    className={
-                      geren.like.find(ele => ele === topic.id)
-                        ? "fa fa-heart"
-                        : "red fa fa-heart"
-                    }
+                    className="fa fa-heart"
                     aria-hidden="true"
                     onClick={() =>
                       store.dispatch({
@@ -214,7 +206,7 @@ class Topic extends Component {
                     }
                     style={{
                       color: geren.like.find(ele => ele === topic.id)
-                        ? "red"
+                        ? "#c1372c"
                         : "#fff"
                     }}
                   ></i>

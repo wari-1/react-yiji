@@ -35,7 +35,7 @@ class Listt extends Component {
                 style={{
                   marginRight: "25%",
                   color: geren.like.find(ele => ele === item.id)
-                    ? "red"
+                    ? "#c1372c"
                     : "#fff"
                 }}
                 onClick={() =>

@@ -48,15 +48,11 @@ class List extends Component {
             <span>
               {topics[0].zhanxun ? (
                 <i
-                  className={
-                    geren.like.find(ele => ele === item.id)
-                      ? "fa fa-heart"
-                      : "red fa fa-heart"
-                  }
+                  className="fa fa-heart"
                   aria-hidden="true"
                   style={{
                     color: geren.like.find(ele => ele === item.id)
-                      ? "red"
+                      ? "#c1372c"
                       : "#fff"
                   }}
                   onClick={() =>
@@ -68,15 +64,11 @@ class List extends Component {
                 />
               ) : (
                 <i
-                  className={
-                    geren.like.find(ele => ele === item.id)
-                      ? "fa fa-heart"
-                      : "red fa fa-heart"
-                  }
+                  className="fa fa-heart"
                   aria-hidden="true"
                   style={{
                     color: geren.like.find(ele => ele === item.id)
-                      ? "red"
+                      ? "#c1372c"
                       : "#fff"
                   }}
                   onClick={() =>
