@@ -13,8 +13,9 @@ class Tuijian extends Component {
   render() {
     const { tuijian, geren } = this.props;
     const zhan = tuijian.filter(item => !item.wen);
-    const wen = tuijian.filter(item => item.wen);
     console.log(zhan);
+    const wen = tuijian.filter(item => item.wen);
+
     console.log(wen);
     return (
       <div className="tuijian">
@@ -38,7 +39,7 @@ class Tuijian extends Component {
                 <div
                   className={
                     "pro-showcase" +
-                    (this.state.current === index ? " show" : "")
+                    (this.state.current === index ? " show" : " none")
                   }
                   key={list.id}
                 >

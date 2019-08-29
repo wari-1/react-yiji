@@ -8,6 +8,7 @@ class List extends Component {
     const { topics, geren } = this.props;
     // console.log(this.props);
     console.log(geren);
+    console.log(topics);
     const list = topics[0].content.map(item => (
       <li key={item.id}>
         <Link
@@ -45,44 +46,48 @@ class List extends Component {
               style={{ marginRight: "25%" }}
             />
             <span>
-              {topics[0].zhanxun?<i
-                className={
-                  geren.like.find(ele => ele === item.id)
-                    ? "fa fa-heart"
-                    : "red fa fa-heart"
-                }
-                aria-hidden="true"
-                style={{
-                  color: geren.like.find(ele => ele === item.id)
-                    ? "red"
-                    : "#fff"
-                }}
-                onClick={() =>
-                  store.dispatch({
-                    type: "CHANGELIKE",
-                    payload: { id: item.id, geren: geren }
-                  })
-                }
-              />:<i
-              className={
-                geren.like.find(ele => ele === item.id)
-                  ? "fa fa-heart"
-                  : "red fa fa-heart"
-              }
-              aria-hidden="true"
-              style={{
-                color: geren.like.find(ele => ele === item.id)
-                  ? "red"
-                  : "#fff"
-              }}
-              onClick={() =>
-                store.dispatch({
-                  type: "CHANGELIKET",
-                  payload: { id: item.id, geren: geren }
-                })
-              }
-            />}
-              
+              {topics[0].zhanxun ? (
+                <i
+                  className={
+                    geren.like.find(ele => ele === item.id)
+                      ? "fa fa-heart"
+                      : "red fa fa-heart"
+                  }
+                  aria-hidden="true"
+                  style={{
+                    color: geren.like.find(ele => ele === item.id)
+                      ? "red"
+                      : "#fff"
+                  }}
+                  onClick={() =>
+                    store.dispatch({
+                      type: "CHANGELIKE",
+                      payload: { id: item.id, geren: geren }
+                    })
+                  }
+                />
+              ) : (
+                <i
+                  className={
+                    geren.like.find(ele => ele === item.id)
+                      ? "fa fa-heart"
+                      : "red fa fa-heart"
+                  }
+                  aria-hidden="true"
+                  style={{
+                    color: geren.like.find(ele => ele === item.id)
+                      ? "red"
+                      : "#fff"
+                  }}
+                  onClick={() =>
+                    store.dispatch({
+                      type: "CHANGELIKET",
+                      payload: { id: item.id, geren: geren }
+                    })
+                  }
+                />
+              )}
+
               <span>{item.zanNum}</span>
             </span>
             <span>

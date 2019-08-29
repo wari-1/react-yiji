@@ -154,7 +154,7 @@ class Geren extends Component {
                   <div
                     className={
                       "pro-showcase" +
-                      (this.state.current == index ? " show" : "")
+                      (this.state.current == index ? " show" : " none")
                     }
                     key={list.id}
                   >

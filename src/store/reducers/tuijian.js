@@ -72,41 +72,7 @@ const initialState = [
         zanNum: 1276,
         liulanNum: 6712
       },
-      {
-        id: "3287rytugh",
-        src:
-          "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/u166_06.jpg",
-        address: "东京都博物馆",
-        startTime: "2019-10-08T15:05:42+08:00",
-        endTime: "2019-11-09T15:05:42+08:00",
-        during: "2019.09.19-11.09",
-        wen: false,
-        desc:
-          "9月19日,中国当代艺术宗曾梵志迄今为止规模最大、涵盖最广泛的展览《散步》将在尤伦斯当代艺术中心举行。北京。本次展览由∪CCA馆长田霏宇与郭希联合策划,囊括以油彩、木材金属、纸本等材料创作的60余件作品,反映了艺术家近30年的持续性创作概貌",
-        author: {
-          desc:
-            "梵志,1964年出生于湖北武汉市,1991年毕业于煳北黑术学油画系。从二纪九十年代起,留梵志的创作以目油特的语离冈格和锐的社会批判界广泛的营,也得到社会民众的持续关注",
-          src:
-            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/zeng_02.gif"
-        },
-        works: {
-          src: [
-            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/zeng_04.gif",
-            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/zeng_06.gif",
-            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/zeng_08.gif",
-            "https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/zeng_10.gif"
-          ]
-        },
-        comments: [
-          {
-            id: "h1hj",
-            text: "挺好的",
-            name: "阿德"
-          }
-        ],
-        zanNum: 277,
-        liulanNum: 1354
-      },
+
       {
         id: "feew4y4343",
         src:
