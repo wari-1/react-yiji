@@ -60,7 +60,7 @@ class Geren extends Component {
 
     return (
       <div className="geren" style={{ position: "relative" }}>
-        <div className=" left ">
+        <div className=" left " style={{ position: "fixed", left: 0, top: 0 }}>
           <div className="top">
             <img
               src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-top_06.png"

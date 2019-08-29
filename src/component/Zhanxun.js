@@ -11,9 +11,8 @@ document.documentElement.style.fontSize =
   document.documentElement.clientWidth / 10.8 + "px";
 class Zhanxun extends Component {
   state = {
-    
     current: 0,
-    
+
     search: false,
     huihua: false,
     shuimo: false,
@@ -87,7 +86,7 @@ class Zhanxun extends Component {
     });
   }
   render() {
-    const { zhanxun ,geren} = this.props;
+    const { zhanxun, geren } = this.props;
     const isDisplaying = zhanxun.filter(item => item.isDisplaying);
     const {
       search,
@@ -133,7 +132,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <Listt topics={huihuac} geren={geren}/>
+            <Listt topics={huihuac} geren={geren} />
           </div>
         </div>
         <div className={shuimo ? "shuimo open" : "shuimo"}>
@@ -144,7 +143,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <Listt topics={shuimoc} geren={geren}/>
+            <Listt topics={shuimoc} geren={geren} />
           </div>
         </div>
         <div className={sheji ? "sheji open" : "sheji"}>
@@ -155,7 +154,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <Listt topics={shejic} geren={geren}/>
+            <Listt topics={shejic} geren={geren} />
           </div>
         </div>
         <div className={sheying ? "sheying open" : "sheying"}>
@@ -166,7 +165,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <Listt topics={sheyingc} geren={geren}/>
+            <Listt topics={sheyingc} geren={geren} />
           </div>
         </div>
         <div className={diaosu ? "diaosu open" : "diaosu"}>
@@ -177,7 +176,7 @@ class Zhanxun extends Component {
             </div>
           </div>
           <div className="content">
-            <Listt topics={diaosuc} geren={geren}/>
+            <Listt topics={diaosuc} geren={geren} />
           </div>
         </div>
         <div className={zhuangzhi ? "zhuangzhi open" : "zhuangzhi"}>
@@ -189,7 +188,7 @@ class Zhanxun extends Component {
           </div>
           <div className="content">
             {zhuangzhic.length ? (
-              <Listt topics={zhuangzhic} geren={geren}/>
+              <Listt topics={zhuangzhic} geren={geren} />
             ) : (
               <img src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/src/assets/images/zhuangzhi_02.png" />
             )}
@@ -315,11 +314,7 @@ class Zhanxun extends Component {
                   {zhanxun.map((list, index) => {
                     return (
                       <li key={list.id}>
-                        <span
-                          
-                          onClick={() => this.onMouseEnter(index)}
-                          
-                        ></span>
+                        <span onClick={() => this.onMouseEnter(index)}></span>
                       </li>
                     );
                   })}
@@ -336,7 +331,10 @@ class Zhanxun extends Component {
                     }
                     key={list.id}
                   >
-                    <List topics={index === 0 ? isDisplaying : toDisplay} geren={geren}/>
+                    <List
+                      topics={index === 0 ? isDisplaying : toDisplay}
+                      geren={geren}
+                    />
                   </div>
                 );
               })}
@@ -350,7 +348,7 @@ class Zhanxun extends Component {
 const mapStateToProps = state => {
   return {
     zhanxun: state.zhanxun,
-    geren:state.geren
+    geren: state.geren
   };
 };
 
