@@ -60,7 +60,7 @@ class Geren extends Component {
 
     return (
       <div className="geren" style={{ position: "relative" }}>
-        <div className=" left " style={{ position: "fixed", left: 0, top: 0 }}>
+        <div className=" left ">
           <div className="top">
             <img
               src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-top_06.png"
@@ -102,21 +102,27 @@ class Geren extends Component {
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-pic_11.png"
                     alt=""
                   />
-                  <span className="show">订阅/{geren.zhanxun.length}</span>
+                  <span className="show" style={{ color: "#000" }}>
+                    订阅/{geren.zhanxun.length}
+                  </span>
                 </div>
                 <div className="box">
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-pic_13.png"
                     alt=""
                   />
-                  <span className="show">订阅/{geren.wenzhang.length}</span>
+                  <span className="show" style={{ color: "#000" }}>
+                    订阅/{geren.wenzhang.length}
+                  </span>
                 </div>
                 <div className="box" style={{ marginRight: 0 }}>
                   <img
                     src="https://dev.tencent.com/u/dtid_30b2a4e50adc6692/p/images-tuoguan/git/raw/master/assent/User-pic_15.png"
                     alt=""
                   />
-                  <span className="show">订阅/{geren.zuoping.length}</span>
+                  <span className="show" style={{ color: "#000" }}>
+                    订阅/{geren.zuoping.length}
+                  </span>
                 </div>
               </div>
             </div>

@@ -307,7 +307,7 @@ class Zhanxun extends Component {
               </div>
             </div>
           </div>
-          <div className="main">
+          <div className="main" style={{ padding: 0 }}>
             <div className="title">
               <div className="keywords">
                 <ul className={this.state.current === 0 ? "" : "current"}>
