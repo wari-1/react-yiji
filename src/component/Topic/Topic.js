@@ -98,20 +98,18 @@ class Topic extends Component {
       .find(item => item.content.find(ele => ele.id === id))
       .content.find(Element => Element.id === id);
     return topic.wen ? (
-      <div>
+      <div className="topic">
         {topic.neirong.map((item, index) => (
-          <div className="topic">
-            <div key={item.id} className="box">
-              <div className={index === 0 ? "main1 box" : "box"}>
-                <img src={item.src} alt="" />
-                <span
-                  onClick={() => this.props.history.go(-1)}
-                  className={index === 0 ? "show" : ""}
-                ></span>
-              </div>
-
-              <p>{item.desc}</p>
+          <div key={item.id} className="box">
+            <div className={index === 0 ? "main1 box" : "box"}>
+              <img src={item.src} alt="" />
+              <span
+                onClick={() => this.props.history.go(-1)}
+                className={index === 0 ? "show" : ""}
+              ></span>
             </div>
+
+            <p>{item.desc}</p>
           </div>
         ))}
       </div>
